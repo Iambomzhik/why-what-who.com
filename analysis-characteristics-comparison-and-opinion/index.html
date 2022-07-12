@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.userEventHandler=this.triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e.triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick")}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<title>Analysis, characteristics, comparison and opinion &#8211; Why-What-Who</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" /></noscript>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link href='https://fonts.gstatic.com/' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Why-What-Who &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Why-What-Who &raquo; Comments Feed" href="../comments/feed/index.html" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min41a3.css?ver=5.8' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wp_automatic_gallery_style-css'  href='../wp-content/cache/min/1/wp-content/plugins/wp-automatic/css/wp-automatic75dd.css?ver=1652887642' type='text/css' media='all' />
+
+<link data-minify="1" rel='stylesheet' id='bootstrap-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/bootstrap8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='newsup-style-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/style8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='newsup-default-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/colors/default8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-5-all-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/font-awesome/css/all.min8d16.css?ver=1652887641' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css'  href='../wp-content/themes/newsup/css/font-awesome/css/v4-shims.min41a3.css?ver=5.8' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='owl-carousel-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/owl.carousel8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='smartmenus-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/jquery.smartmenus.bootstrap8d16.css?ver=1652887641' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/plugins/wp-automatic/js/main-front75dd.js?ver=1652887642' id='wp_automatic_gallery-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/navigation75dd.js?ver=1652887642' id='newsup-navigation-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/bootstrap75dd.js?ver=1652887642' id='bootstrap-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-content/themes/newsup/js/owl.carousel.min41a3.js?ver=5.8' id='owl-carousel-min-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.smartmenus75dd.js?ver=1652887642' id='smartmenus-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.smartmenus.bootstrap75dd.js?ver=1652887642' id='bootstrap-smartmenus-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.marquee75dd.js?ver=1652887642' id='newsup-marquee-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/main75dd.js?ver=1652887642' id='newsup-main-js-js' defer></script>
+<link rel="https://api.w.org/" href="../wp-json/index.html" /><link rel="alternate" type="application/json" href="../wp-json/wp/v2/posts/2706.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='../index5705.html?p=2706' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed66ed.json?url=https%3A%2F%2Fwhy-what-who.com%2Fanalysis-characteristics-comparison-and-opinion%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed84a2?url=https%3A%2F%2Fwhy-what-who.com%2Fanalysis-characteristics-comparison-and-opinion%2F&amp;format=xml" />
+<style type="text/css" id="custom-background-css">
+    .wrapper { background-color: eeeeee; }
+</style>
+    <style type="text/css">
+            body .site-title a,
+        body .site-description {
+            color: #fff;
+        }
+
+        .site-branding-text .site-title a {
+                font-size: px;
+            }
+
+            @media only screen and (max-width: 640px) {
+                .site-branding-text .site-title a {
+                    font-size: 40px;
+
+                }
+            }
+
+            @media only screen and (max-width: 375px) {
+                .site-branding-text .site-title a {
+                    font-size: 32px;
+
+                }
+            }
+
+        </style>
+    <style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #eeeeee; }
+</style>
+	<link rel="icon" href="../wp-content/uploads/2022/05/cropped-w-32x32.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2022/05/cropped-w-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../wp-content/uploads/2022/05/cropped-w-180x180.png" />
+<meta name="msapplication-TileImage" content="https://why-what-who.com/wp-content/uploads/2022/05/cropped-w-270x270.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript" async src="../../pagead2.googlesyndication.com/pagead/js/f4047.txt?client=ca-pub-1731162805004860" crossorigin="anonymous"></script>
+</head>
+<body class="post-template-default single single-post postid-2706 single-format-standard custom-background wp-embed-responsive  ta-hide-date-author-in-list" >
+<a href="https://orgwordpress.org/">orgwordpress.org</a><div id="page" class="site">
+<a class="skip-link screen-reader-text" href="#content">
+Skip to content</a>
+    <div class="wrapper" id="custom-background-css">
+        <header class="mg-headwidget">
+            <!--==================== TOP BAR ====================-->
+
+            <!--<div class="mg-head-detail hidden-xs">
+    <div class="container-fluid">
+        <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                <ul class="info-left">
+                            <li>        </li>
+                    </ul>
+            </div>
+                    </div>
+    </div>
+</div>
+-->
+            <div class="clearfix"></div>
+                        <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/cropped-250x215-1.png" class="mg-nav-widget-area-back rocket-lazyload" style=''>
+                        <div class="overlay">
+              <div class="inner"  style="background-color:rgba(32,47,91,0.4);" > 
+                <div class="container-fluid">
+                    <div class="mg-nav-widget-area">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 col-sm-4 text-center-xs">
+                                <div class="navbar-header">
+                                                                <div class="site-branding-text">
+                                <h1 class="site-title"> <a href="../index.html" rel="home">Why-What-Who</a></h1>
+                                <p class="site-description">Why What Who Info News</p>
+                                </div>
+                                                              </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+          </div>
+    <div class="mg-menu-full">
+      <nav class="navbar navbar-expand-lg navbar-wp">
+        <div class="container-fluid flex-row-reverse">
+          <!-- Right nav -->
+                    <div class="m-header d-flex pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
+                                                <a class="mobilehomebtn" href="../index.html"><span class="fas fa-home"></span></a>
+                        <!-- navbar-toggle -->
+                        <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <i class="fas fa-bars"></i>
+                        </button>
+                        <!-- /navbar-toggle -->
+                                                <div class="dropdown show mg-search-box pr-2">
+                            <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <i class="fas fa-search"></i>
+                            </a>
+
+                            <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
+                        <form role="search" method="get" id="searchform" action="https://why-what-who.com/">
+  <div class="input-group">
+    <input type="search" class="form-control" placeholder="Search" value="" name="s" />
+    <span class="input-group-btn btn-default">
+    <button type="submit" class="btn"> <i class="fas fa-search"></i> </button>
+    </span> </div>
+</form>                      </div>
+                        </div>
+                                              
+                    </div>
+                    <!-- /Right nav -->
+         
+          
+                  <div class="collapse navbar-collapse" id="navbar-wp">
+                  	<div class="d-md-block">
+                  <ul class="nav navbar-nav mr-auto"><li class="nav-item menu-item "><a class="nav-link " href="../index.html" title="Home">Home</a></li></ul>
+        				</div>		
+              		</div>
+          </div>
+      </nav> <!-- /Navigation -->
+    </div>
+</header>
+<div class="clearfix"></div>
+ <!-- =========================
+     Page Content Section      
+============================== -->
+<main id="content">
+    <!--container-->
+    <div class="container-fluid">
+      <!--row-->
+      <div class="row">
+        <!--col-md-->
+                                                <div class="col-md-9">
+                    		                  <div class="mg-blog-post-box"> 
+              <div class="mg-header">
+                                <div class="mg-blog-category"> 
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                </div>
+                                <h1 class="title single"> <a title="Permalink to: Analysis, characteristics, comparison and opinion">
+                  Analysis, characteristics, comparison and opinion</a>
+                </h1>
+
+                <div class="media mg-info-author-block"> 
+                                    <a class="mg-author-pic" href="../author/ad007/index.html"> <img alt='' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" data-lazy-srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' data-lazy-src="https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g" /><noscript><img alt='' src='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g' srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' /></noscript> </a>
+                                  <div class="media-body">
+                                        <h4 class="media-heading"><span>By</span><a href="../author/ad007/index.html">Ad007</a></h4>
+                                                            <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                      May 29, 2022</span>
+                                      </div>
+                </div>
+              </div>
+              <img width="1268" height="664" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201268%20664'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="Analysis, characteristics, comparison and opinion" data-lazy-srcset="https://why-what-who.com/wp-content/uploads/2022/05/Samsung-1.jpg 1268w, https://why-what-who.com/wp-content/uploads/2022/05/Samsung-1-1024x536.jpg 1024w, https://why-what-who.com/wp-content/uploads/2022/05/Samsung-1-768x402.jpg 768w" data-lazy-sizes="(max-width: 1268px) 100vw, 1268px" data-lazy-src="../wp-content/uploads/2022/05/Samsung-1.jpg" /><noscript><img width="1268" height="664" src="../wp-content/uploads/2022/05/Samsung-1.jpg" class="img-fluid wp-post-image" alt="Analysis, characteristics, comparison and opinion" srcset="https://why-what-who.com/wp-content/uploads/2022/05/Samsung-1.jpg 1268w, https://why-what-who.com/wp-content/uploads/2022/05/Samsung-1-1024x536.jpg 1024w, https://why-what-who.com/wp-content/uploads/2022/05/Samsung-1-768x402.jpg 768w" sizes="(max-width: 1268px) 100vw, 1268px" /></noscript>              <article class="small single">
+                
+<p>As usual in the high range, the mobile has fast charging and wireless charging and is also compatible with 5G networks, with WiFi 6E, with Bluetooth 5.2&#8230; And it has IP68 certification to protect us from water and dust, in addition to an S- Pen that will allow us to take notes, draw with precision, etc.</p>
+<p style="display:inline-block; width:100%;"></p>
+<h2>The best and the worst</h2>
+<p>Among the main advantages and benefits of this Samsung Galaxy S22 Ultra we have its design and its screen.  The phone has an outstanding construction and in our hands we notice that we have a phone of the highest range, of excellent quality.  In addition, its screen has outstanding quality if we are looking for a good image, brightness&#8230;</p>
+<p><strong>The main drawback of the Samsung Galaxy S22 Ultr</strong>A is that it is an outstanding phone but not suitable for all pockets because its price exceeds 1,200 euros.  Also, <strong>there are other small inconveniences</strong> that can make it not for us as an autonomy that may not be prepared for intense use for a whole day and may fall short.  Also, the performance is not the best compared to other phones in the same range or price range.</p>
+<p style="display:inline-block; width:100%;"><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1636044 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201077%20609'%3E%3C/svg%3E" alt="samsung mobile" width="1077" height="609"  data-lazy-src="../wp-content/uploads/2022/05/1653835192_817_Analysis-characteristics-comparison-and-opinion.jpg" /><noscript><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1636044 size-full" src="../wp-content/uploads/2022/05/1653835192_817_Analysis-characteristics-comparison-and-opinion.jpg" alt="samsung mobile" width="1077" height="609"  /></noscript></p>
+<h2>Price range</h2>
+<p>The Samsung phone is a premium range smartphone that will cost us more than 1,000 euros in any case and in any of its four versions of available storage.  If we take a look at the Samsung website we will see how they all exceed 1,259 euros from the 128 GB + 8 GB version to the 12 GB + 1 TB version with a price of around 1,658 euros.</p>
+<p>Can we find it at a discount?  Although the same prices are always offered from the Samsung website, we can see that some of the models have recently dropped on Amazon.  For example, <strong>the free 128 GB model of the Samsung Galaxy S22</strong> Ultra was priced at around 1,500 euros in the online store but is currently around 1,200 euros.</p>
+<p style="display:inline-block; width:100%;"><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635933 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20601'%3E%3C/svg%3E" alt="Samsung Camelcamel" width="1200" height="601" data-lazy-src="../wp-content/uploads/2022/05/1653835192_285_Analysis-characteristics-comparison-and-opinion.jpg"/><noscript><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635933 size-full" src="../wp-content/uploads/2022/05/1653835192_285_Analysis-characteristics-comparison-and-opinion.jpg" alt="Samsung Camelcamel" width="1200" height="601"/></noscript></p>
+<h2>In which operators can it be obtained</h2>
+<p>We can get the Samsung Galaxy S22 Ultra with different operators whether we want the 256 GB or 512 GB version in both black and red&#8230;</p>
+<p>At Movistar we can get the Samsung Galaxy S22 Ultra in its two available versions and financing in twelve, twenty-four, thirty or thirty-six installments without interest.<strong> The total amount of the phone is 1359</strong> and the prices start from 37.75 euros per month in the case of choosing 36 installments, but we can also pay it in just one year betting on twelve installments of 113.25 euros per month for the telephone.</p>
+<p style="display:inline-block; width:100%;"><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635567 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20826'%3E%3C/svg%3E" alt="Samsung Galaxy S22 Ultra" width="1200" height="826" data-lazy-src="../wp-content/uploads/2022/05/1653835192_565_Analysis-characteristics-comparison-and-opinion.jpg"/><noscript><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635567 size-full" src="../wp-content/uploads/2022/05/1653835192_565_Analysis-characteristics-comparison-and-opinion.jpg" alt="Samsung Galaxy S22 Ultra" width="1200" height="826"/></noscript>At Vodafone we can also get the Samsung mobile phone for a spot price of <strong>€1125</strong> along with 1.33 euros of digital canon if we bet on portability.  But <strong>we can also have it in installments</strong> for a price ranging from 25 euros per month for 36 months and with an initial payment of 225 euros.  Although not currently available</p>
+<p style="display:inline-block; width:100%;"><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635570 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20971'%3E%3C/svg%3E" alt="Samsung Galaxy S22 Ultra" width="1200" height="971" data-lazy-src="../wp-content/uploads/2022/05/1653835192_58_Analysis-characteristics-comparison-and-opinion.jpg"/><noscript><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635570 size-full" src="../wp-content/uploads/2022/05/1653835192_58_Analysis-characteristics-comparison-and-opinion.jpg" alt="Samsung Galaxy S22 Ultra" width="1200" height="971"/></noscript></p>
+<p>In the case of choosing Orange, we can buy it in cash without a fee or with a fee in installments.  In cash we will get it for 1359 euros without permanence.  If we choose a rate we can get the 256 GB version in 30 installments from 32 euros per month and without initial payment, so the phone <strong>it would cost us about 960 euros.</strong></p>
+<p style="display:inline-block; width:100%;"><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635576 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20530'%3E%3C/svg%3E" alt="samsung s22 ultra orange" width="1200" height="530" data-lazy-src="../wp-content/uploads/2022/05/1653835192_558_Analysis-characteristics-comparison-and-opinion.jpg"/><noscript><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635576 size-full" src="../wp-content/uploads/2022/05/1653835192_558_Analysis-characteristics-comparison-and-opinion.jpg" alt="samsung s22 ultra orange" width="1200" height="530"/></noscript></p>
+<h2>Technical data</h2>
+<p>Specifications, technical features and all the details of Samsung&#8217;s premium phone.</p>
+<table>
+<tbody>
+<tr>
+<td>Dimensions</td>
+<td>163.3&#215;77.9&#215;8.9</td>
+<td>with premium design</td>
+</tr>
+<tr>
+<td>Weight</td>
+<td>228 grams</td>
+<td>not too light</td>
+</tr>
+<tr>
+<td>Screen</td>
+<td>Dynamic AMOLED 2X</td>
+<td>With QUAD HD+ resolution</td>
+</tr>
+<tr>
+<td>Operating system</td>
+<td>MIUI 13 based on Android 12</td>
+<td>Updated and many options</td>
+</tr>
+<tr>
+<td>Processor</td>
+<td>Snapdragon 8 Gen 1</td>
+<td>An outstanding power</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>8GB or 12GB</td>
+<td>great performance</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>128GB, 256, 512, or 1TB</td>
+<td>storage for everything</td>
+</tr>
+<tr>
+<td>Drums</td>
+<td>5000mAh</td>
+<td>With fast and wireless charging</td>
+</tr>
+<tr>
+<td>main chamber</td>
+<td>108 megapixels</td>
+<td>High-quality photos and videos</td>
+</tr>
+<tr>
+<td>secondary camera</td>
+<td>10 megapixels</td>
+<td>For larger photos</td>
+</tr>
+<tr>
+<td>other cameras</td>
+<td>12 megapixels + 10 megapixels</td>
+<td>For detailed photos</td>
+</tr>
+<tr>
+<td>Frontal camera</td>
+<td>40 megapixels</td>
+<td>With modes for selfies</td>
+</tr>
+<tr>
+<td>connectivity</td>
+<td>5G, Wi-Fi 6, Bluetooth 5.2</td>
+<td>Great speed to navigate</td>
+</tr>
+<tr>
+<td>ports</td>
+<td>USB Type-C / Dual Nano SIM</td>
+<td>No headphone jack</td>
+</tr>
+<tr>
+<td>Available colours</td>
+<td>Bordeaux, green, black and white</td>
+<td>modern and current design</td>
+</tr>
+</tbody>
+</table>
+<h2>ADSLZone review</h2>
+<p>The Samsung Galaxy S22 Ultra <strong>it is not a phone for all pockets</strong> but it is a more than recommended option if you have a high budget for a new mobile and want to bet on the best, on incredible quality in an outstanding phone that bets on photographic equipment with which you will not miss a professional camera in addition to <strong>an absolutely premium design</strong> although perhaps somewhat more square than usual that makes it not as comfortable as other phones.</p>
+<p>It is a mobile with which to get it right, without a doubt, beyond some small inconveniences that we have already mentioned, such as that it will not withstand intense use if we want the battery to last all day or that the power is not 10.</p>
+<p style="display:inline-block; width:100%;"><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635864 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20930%20569'%3E%3C/svg%3E" alt="Samsung Galaxy S22 Ultra (4)" width="930" height="569"  data-lazy-src="../wp-content/uploads/2022/05/1653835192_45_Analysis-characteristics-comparison-and-opinion.jpg" /><noscript><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635864 size-full" src="../wp-content/uploads/2022/05/1653835192_45_Analysis-characteristics-comparison-and-opinion.jpg" alt="Samsung Galaxy S22 Ultra (4)" width="930" height="569"  /></noscript></p>
+<h2>User opinion</h2>
+<p>If we take a look at the comments on Amazon of the Samsung Galaxy S22 Ultra, we can see that the majority of opinions value the phone with five stars or four stars.  A mobile in which the users of the online store have highlighted aspects com<strong>or the battery, the camera, the fast charge or the performance of the mobile.</strong></p>
+<p>In a comment by Daniel on March 8, 2022, he indicates:</p>
+<blockquote>
+<p>«We have in front of us the best Samsung mobile to date, but honestly it seems to me an excessive price, since for €1359 we have a mobile similar to the previous ones with some small improvement, on top of that we can add that this year comes with the novelty that it does not come with a charger.  We can say that luckily I got an offer in which the phone came with a charger, but the 25w one, much to be desired from this company.  Currently, I think they should improve face recognition, since Apple completely eats up Samsung in this area.  In addition, the fingerprint recognition leaves something to be desired, since when you put on a protector it does not work correctly, they should look for another area…”</p>
+</blockquote>
+<p>Sergio also talks about a &#8220;bittersweet feeling&#8221; with the Samsung mobile in a comment in March 2022 on the Samsung Galaxy S22 Ultra website.</p>
+<blockquote>
+<p>“I have bittersweet feelings, it goes very well and is a great high-end, but it has little things that do not leave me completely satisfied for the price of €1,350.  the fingerprint is slow compared to other brands, if you put a protector on it, forget that you don&#8217;t have to apply your finger more than twice to be recognized.  I notice a lack of coverage at times and on the internet it sometimes gets a bit stuck, having to close the window since <strong>does not let go forward or backwards</strong>.  The screen is very good but the color of the icons of the applications themselves are not very bright, the truth is that it leaves me somewhat dissatisfied for the price paid but I have a couple of returns from other mobiles and I don&#8217;t know if Amazon might not like a new change .  It&#8217;s been a while since I&#8217;m satisfied with the high-end prices for what they really give.  It may be because of its exynos processor and that with the 8 gen 1 it goes much better, I don&#8217;t know, but it&#8217;s not something huge either, it&#8217;s a very expensive phone for what it claims to give and then it really gives.  Other than that, highly recommended.”</p>
+</blockquote>
+<p style="display:inline-block; width:100%;"><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1636041 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20562'%3E%3C/svg%3E" alt="amazon" width="1200" height="562" data-lazy-src="../wp-content/uploads/2022/05/1653835192_887_Analysis-characteristics-comparison-and-opinion.jpg"/><noscript><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1636041 size-full" src="../wp-content/uploads/2022/05/1653835192_887_Analysis-characteristics-comparison-and-opinion.jpg" alt="amazon" width="1200" height="562"/></noscript></p>
+<h2>Similar mobiles</h2>
+<p>Thinking of alternatives to the Samsung Galaxy S22 Ultra? <strong>There are some similar phones</strong> that you can take into account and that are also in the premium range.</p>
+<p>The Xiaomi 12 Pro is a quality mobile phone with a set of 50 megapixel cameras if we are looking for one of the best cameras in a smartphone. <strong>A 50 megapixel main camera</strong> accompanied by 50 megapixel ultra wide angle and 50 megapixel telephoto lens for an almost unbeatable result.  In addition, a mobile with a premium design and an excellent quality screen.</p>
+<p>Oppo also has one of <strong>the best phones on the market</strong> and it is the Oppo Find X5 Pro 5G, a mobile that can be among the alternatives to the Samsung Galaxy S22 Ultra.  It boasts “a futuristic technology housed in a curved body with cosmic tones that takes the quality of your photography to new levels”.  With a 50-megapixel main camera accompanied by a 50-megapixel wide-angle camera and a third 13-megapixel telephoto camera.</p>
+<p>With a price that is also around 1,200 euros, we can buy the iPhone 13 Pro as one of the best alternatives to the Samsung Galaxy S22 Ultra.  a premium phone <strong>with up to 1TB of storage</strong> and with a Super Retina XDR display with ProMotion.  A 6.7-inch OLED screen with IP68 resistance to water and dust.  Inside, the Apple phone packs the A15 Bionic chip inside for power for everything.  And a 12-megapixel Pro camera system with telephoto, wide-angle and ultra-wide-angle plus up to 15X digital zoom.</p>
+<h2>Frequent questions</h2>
+<p>What are the main questions you may have about the Samsung Galaxy S22 Ultra before buying it?</p>
+<p>Samsung&#8217;s phone <strong>has an IP68 certification</strong> that ensures protection against dust and fresh water.  The certification indicates that the phone can be submerged in water at depths of up to one meter and for a maximum of 30 minutes.</p>
+<ul>
+<li><strong>How long does the battery last?</strong></li>
+</ul>
+<p>The Samsung Galaxy S22 Ultra battery has <strong>an estimated usage time of up to 38 hours talk time</strong> according to the brand itself, up to 19 hours of Internet use with 4G or up to 20 hours with WiFi.  In addition, the audio playback time is about 81 hours and the video playback time is up to 22 hours.</p>
+<p>Yes, the phone is Dual SIM with a Nano SIM.</p>
+<ul>
+<li><strong>What colors is it available in?</strong></li>
+</ul>
+<p>We can get the Samsung Galaxy S22 Ultra in <strong>four different colors</strong> which may vary depending on the operator or the country.  We can buy it in white, black, green or burgundy or burgundy.</p>
+<p style="display:inline-block; width:100%;"><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635699 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%201118'%3E%3C/svg%3E" alt="Samsung Galaxy S22 Ultra" width="1200" height="1118" data-lazy-src="../wp-content/uploads/2022/05/1653835192_59_Analysis-characteristics-comparison-and-opinion.jpg"/><noscript><img viewbox="0 0 3 2" loading="lazy" class="aligncenter wp-image-1635699 size-full" src="../wp-content/uploads/2022/05/1653835192_59_Analysis-characteristics-comparison-and-opinion.jpg" alt="Samsung Galaxy S22 Ultra" width="1200" height="1118"/></noscript></p>
+<h2>Assessment</h2>
+                                                     <script type="rocketlazyloadscript">
+    function pinIt()
+    {
+      var e = document.createElement('script');
+      e.setAttribute('type','text/javascript');
+      e.setAttribute('charset','UTF-8');
+      e.setAttribute('src','../../assets.pinterest.com/js/pinmarklet2a3b.js?r='+Math.random()*99999999);
+      document.body.appendChild(e);
+    }
+    </script>
+                     <div class="post-share">
+                          <div class="post-share-icons cf">
+                           
+                              <a href="https://www.facebook.com/sharer.php?u=https://why-what-who.com/analysis-characteristics-comparison-and-opinion/" class="link facebook" target="_blank" >
+                                <i class="fab fa-facebook"></i></a>
+                            
+            
+                              <a href="http://twitter.com/share?url=https://why-what-who.com/analysis-characteristics-comparison-and-opinion/&amp;text=Analysis%2C%20characteristics%2C%20comparison%20and%20opinion" class="link twitter" target="_blank">
+                                <i class="fab fa-twitter"></i></a>
+            
+                              <a href="mailto:?subject=Analysis,%20characteristics,%20comparison%20and%20opinion&#038;body=https://why-what-who.com/analysis-characteristics-comparison-and-opinion/" class="link email" target="_blank" >
+                                <i class="fas fa-envelope"></i></a>
+
+
+                              <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://why-what-who.com/analysis-characteristics-comparison-and-opinion/&amp;title=Analysis%2C%20characteristics%2C%20comparison%20and%20opinion" class="link linkedin" target="_blank" >
+                                <i class="fab fa-linkedin"></i></a>
+
+                             <a href="https://telegram.me/share/url?url=https://why-what-who.com/analysis-characteristics-comparison-and-opinion/&amp;text&amp;title=Analysis%2C%20characteristics%2C%20comparison%20and%20opinion" class="link telegram" target="_blank" >
+                                <i class="fab fa-telegram"></i></a>
+
+                              <a href="javascript:pinIt();" class="link pinterest"><i class="fab fa-pinterest"></i></a>    
+                          </div>
+                    </div>
+
+                <div class="clearfix mb-3"></div>
+                
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="../%e2%84%b9-how-the-uefa-qualification-for-the-qatar-2022-world-cup-is-going/index.html" rel="prev">How the UEFA qualification for the Qatar 2022 World Cup is going <div class="fas fa-angle-double-right"></div><span></span></a></div><div class="nav-next"><a href="../know-all-the-data-on-the-hard-drive-or-ssd-with-crystaldiskinfo/index.html" rel="next"><div class="fas fa-angle-double-left"></div><span></span> Know all the data on the hard drive or SSD with CrystalDiskInfo</a></div></div>
+	</nav>                          </article>
+            </div>
+		                 <div class="media mg-info-author-block">
+            <a class="mg-author-pic" href="../author/ad007/index.html"><img alt='' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" data-lazy-srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' data-lazy-src="https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g" /><noscript><img alt='' src='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g' srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' /></noscript></a>
+                <div class="media-body">
+                  <h4 class="media-heading">By <a href ="../author/ad007/index.html">Ad007</a></h4>
+                  <p></p>
+                </div>
+            </div>
+                          <div class="mg-featured-slider p-3 mb-4">
+                        <!--Start mg-realated-slider -->
+                        <div class="mg-sec-title">
+                            <!-- mg-sec-title -->
+                                                        <h4>Related Post</h4>
+                        </div>
+                        <!-- // mg-sec-title -->
+                           <div class="row">
+                                <!-- featured_post -->
+                                                                      <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/07/asi-podemos-saber-comprar-router-nuevo.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html" title="Permalink to: So you can know if you should buy a new router for the Internet">
+                                              So you can know if you should buy a new router for the Internet</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              Jul 12, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                        <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/medium.GettyImages-1172049905-e1637343496829.jpeg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../the-classified-countries-and-the-dates/index.html" title="Permalink to: The classified countries and the dates">
+                                              The classified countries and the dates</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              May 30, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                        <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/apps-autotune-android.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../best-autotune-apps-for-android/index.html" title="Permalink to: Best Autotune Apps for Android">
+                                              Best Autotune Apps for Android</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              May 30, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                </div>
+                            
+                    </div>
+                    <!--End mg-realated-slider -->
+                        </div>
+             <!--sidebar-->
+          <!--col-md-3-->
+            <aside class="col-md-3">
+                  
+<aside id="secondary" class="widget-area" role="complementary">
+	<div id="sidebar-right" class="mg-sidebar">
+		<div id="block-2" class="mg-widget widget_block widget_search"><form role="search" method="get" action="https://why-what-who.com/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"><label for="wp-block-search__input-1" class="wp-block-search__label">Search</label><div class="wp-block-search__inside-wrapper"><input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" value="" placeholder=""  required /><button type="submit" class="wp-block-search__button ">Search</button></div></form></div><div id="block-3" class="mg-widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container"><h2>Recent Posts</h2><ul class="wp-block-latest-posts__list wp-block-latest-posts"><li><a href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html">So you can know if you should buy a new router for the Internet</a></li>
+<li><a href="../the-classified-countries-and-the-dates/index.html">The classified countries and the dates</a></li>
+<li><a href="../best-autotune-apps-for-android/index.html">Best Autotune Apps for Android</a></li>
+<li><a href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html">Photo, music and video extensions for Mozilla Firefox</a></li>
+<li><a href="../cristina-and-alberto-repeat-their-show-until-exhaustion-public-informant/index.html">Cristina and Alberto repeat their show until exhaustion – Public Informant</a></li>
+</ul></div></div></div>	</div>
+</aside><!-- #secondary -->
+            </aside>
+          <!--/col-md-3-->
+      <!--/sidebar-->
+          </div>
+  </div>
+</main>
+  <div class="container-fluid mr-bot40 mg-posts-sec-inner">
+        <div class="missed-inner">
+        <div class="row">
+                        <div class="col-md-12">
+                <div class="mg-sec-title">
+                    <!-- mg-sec-title -->
+                    <h4>You missed</h4>
+                </div>
+            </div>
+                            <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/07/asi-podemos-saber-comprar-router-nuevo.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html" title="Permalink to: So you can know if you should buy a new router for the Internet"> So you can know if you should buy a new router for the Internet</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/07/index.html">
+         Jul 12, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/medium.GettyImages-1172049905-e1637343496829.jpeg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../the-classified-countries-and-the-dates/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../the-classified-countries-and-the-dates/index.html" title="Permalink to: The classified countries and the dates"> The classified countries and the dates</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/apps-autotune-android.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../best-autotune-apps-for-android/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../best-autotune-apps-for-android/index.html" title="Permalink to: Best Autotune Apps for Android"> Best Autotune Apps for Android</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/Extensiones-de-fotos-musica-y-videos-para-Mozilla-Firefox.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html" title="Permalink to: Photo, music and video extensions for Mozilla Firefox"> Photo, music and video extensions for Mozilla Firefox</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                     
+
+                </div>
+            </div>
+        </div>
+<!--==================== FOOTER AREA ====================-->
+        <footer> 
+            <div class="overlay" style="background-color: ;">
+                <!--Start mg-footer-widget-area-->
+                                 <!--End mg-footer-widget-area-->
+                <!--Start mg-footer-widget-area-->
+                <div class="mg-footer-bottom-area">
+                    <div class="container-fluid">
+                        <div class="divide-line"></div>
+                        <div class="row align-items-center">
+                            <!--col-md-4-->
+                            <div class="col-md-6">
+                                                             <div class="site-branding-text">
+                              <h1 class="site-title"> <a href="../index.html" rel="home">Why-What-Who</a></h1>
+                              <p class="site-description">Why What Who Info News</p>
+                              </div>
+                                                          </div>
+
+                             
+                            <div class="col-md-6 text-right text-xs">
+                                
+                            <ul class="mg-social">
+                                    
+                                                                         
+                                                                        
+                                                                 </ul>
+
+
+                            </div>
+                            <!--/col-md-4-->  
+                             
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/container-->
+                </div>
+                <!--End mg-footer-widget-area-->
+
+                <div class="mg-footer-copyright">
+                    <div class="container-fluid">
+                        <div class="row">
+                                                      <div class="col-md-6 text-xs">
+                                                            <p>info@why-what-who.com</p>
+                            </div>
+
+
+                                                        <div class="col-md-6 text-right text-xs">
+                                <ul class="info-right"><li class="nav-item menu-item "><a class="nav-link " href="../index.html" title="Home">Home</a></li></ul>
+                            </div>
+                                                  </div>
+                    </div>
+                </div>
+            </div>
+            <!--/overlay-->
+        </footer>
+        <!--/footer-->
+    </div>
+  </div>
+    <!--/wrapper-->
+    <!--Scroll To Top-->
+    <a href="#" class="ta_upscr bounceInup animated"><i class="fas fa-angle-up"></i></a>
+    <!--/Scroll To Top-->
+<!-- /Scroll To Top -->
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/why-what-who.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("../index.html")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("../index.html")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min41a3.js?ver=5.8' id='wp-embed-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/custom75dd.js?ver=1652887642' id='newsup-custom-js' defer></script>
+	<script type="rocketlazyloadscript">
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="../wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-228577383-3"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-228577383-3');
+</script>
+
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1657638990 -->

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.userEventHandler=this.triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e.triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick")}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<title>World Ranking 2022: Qualifying Phase for the Qatar World Cup: Matches and Results &#8211; Why-What-Who</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" /></noscript>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link href='https://fonts.gstatic.com/' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Why-What-Who &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Why-What-Who &raquo; Comments Feed" href="../comments/feed/index.html" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min41a3.css?ver=5.8' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wp_automatic_gallery_style-css'  href='../wp-content/cache/min/1/wp-content/plugins/wp-automatic/css/wp-automatic75dd.css?ver=1652887642' type='text/css' media='all' />
+
+<link data-minify="1" rel='stylesheet' id='bootstrap-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/bootstrap8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='newsup-style-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/style8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='newsup-default-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/colors/default8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-5-all-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/font-awesome/css/all.min8d16.css?ver=1652887641' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css'  href='../wp-content/themes/newsup/css/font-awesome/css/v4-shims.min41a3.css?ver=5.8' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='owl-carousel-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/owl.carousel8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='smartmenus-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/jquery.smartmenus.bootstrap8d16.css?ver=1652887641' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/plugins/wp-automatic/js/main-front75dd.js?ver=1652887642' id='wp_automatic_gallery-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/navigation75dd.js?ver=1652887642' id='newsup-navigation-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/bootstrap75dd.js?ver=1652887642' id='bootstrap-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-content/themes/newsup/js/owl.carousel.min41a3.js?ver=5.8' id='owl-carousel-min-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.smartmenus75dd.js?ver=1652887642' id='smartmenus-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.smartmenus.bootstrap75dd.js?ver=1652887642' id='bootstrap-smartmenus-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.marquee75dd.js?ver=1652887642' id='newsup-marquee-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/main75dd.js?ver=1652887642' id='newsup-main-js-js' defer></script>
+<link rel="https://api.w.org/" href="../wp-json/index.html" /><link rel="alternate" type="application/json" href="../wp-json/wp/v2/posts/2721.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='../indexbb3e.html?p=2721' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed1fbf.json?url=https%3A%2F%2Fwhy-what-who.com%2Fworld-ranking-2022-qualifying-phase-for-the-qatar-world-cup-matches-and-results%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed2d8b?url=https%3A%2F%2Fwhy-what-who.com%2Fworld-ranking-2022-qualifying-phase-for-the-qatar-world-cup-matches-and-results%2F&amp;format=xml" />
+<style type="text/css" id="custom-background-css">
+    .wrapper { background-color: eeeeee; }
+</style>
+    <style type="text/css">
+            body .site-title a,
+        body .site-description {
+            color: #fff;
+        }
+
+        .site-branding-text .site-title a {
+                font-size: px;
+            }
+
+            @media only screen and (max-width: 640px) {
+                .site-branding-text .site-title a {
+                    font-size: 40px;
+
+                }
+            }
+
+            @media only screen and (max-width: 375px) {
+                .site-branding-text .site-title a {
+                    font-size: 32px;
+
+                }
+            }
+
+        </style>
+    <style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #eeeeee; }
+</style>
+	<link rel="icon" href="../wp-content/uploads/2022/05/cropped-w-32x32.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2022/05/cropped-w-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../wp-content/uploads/2022/05/cropped-w-180x180.png" />
+<meta name="msapplication-TileImage" content="https://why-what-who.com/wp-content/uploads/2022/05/cropped-w-270x270.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript" async src="../../pagead2.googlesyndication.com/pagead/js/f4047.txt?client=ca-pub-1731162805004860" crossorigin="anonymous"></script>
+</head>
+<body class="post-template-default single single-post postid-2721 single-format-standard custom-background wp-embed-responsive  ta-hide-date-author-in-list" >
+<a href="https://orgwordpress.org/">orgwordpress.org</a><div id="page" class="site">
+<a class="skip-link screen-reader-text" href="#content">
+Skip to content</a>
+    <div class="wrapper" id="custom-background-css">
+        <header class="mg-headwidget">
+            <!--==================== TOP BAR ====================-->
+
+            <!--<div class="mg-head-detail hidden-xs">
+    <div class="container-fluid">
+        <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                <ul class="info-left">
+                            <li>        </li>
+                    </ul>
+            </div>
+                    </div>
+    </div>
+</div>
+-->
+            <div class="clearfix"></div>
+                        <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/cropped-250x215-1.png" class="mg-nav-widget-area-back rocket-lazyload" style=''>
+                        <div class="overlay">
+              <div class="inner"  style="background-color:rgba(32,47,91,0.4);" > 
+                <div class="container-fluid">
+                    <div class="mg-nav-widget-area">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 col-sm-4 text-center-xs">
+                                <div class="navbar-header">
+                                                                <div class="site-branding-text">
+                                <h1 class="site-title"> <a href="../index.html" rel="home">Why-What-Who</a></h1>
+                                <p class="site-description">Why What Who Info News</p>
+                                </div>
+                                                              </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+          </div>
+    <div class="mg-menu-full">
+      <nav class="navbar navbar-expand-lg navbar-wp">
+        <div class="container-fluid flex-row-reverse">
+          <!-- Right nav -->
+                    <div class="m-header d-flex pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
+                                                <a class="mobilehomebtn" href="../index.html"><span class="fas fa-home"></span></a>
+                        <!-- navbar-toggle -->
+                        <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <i class="fas fa-bars"></i>
+                        </button>
+                        <!-- /navbar-toggle -->
+                                                <div class="dropdown show mg-search-box pr-2">
+                            <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <i class="fas fa-search"></i>
+                            </a>
+
+                            <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
+                        <form role="search" method="get" id="searchform" action="https://why-what-who.com/">
+  <div class="input-group">
+    <input type="search" class="form-control" placeholder="Search" value="" name="s" />
+    <span class="input-group-btn btn-default">
+    <button type="submit" class="btn"> <i class="fas fa-search"></i> </button>
+    </span> </div>
+</form>                      </div>
+                        </div>
+                                              
+                    </div>
+                    <!-- /Right nav -->
+         
+          
+                  <div class="collapse navbar-collapse" id="navbar-wp">
+                  	<div class="d-md-block">
+                  <ul class="nav navbar-nav mr-auto"><li class="nav-item menu-item "><a class="nav-link " href="../index.html" title="Home">Home</a></li></ul>
+        				</div>		
+              		</div>
+          </div>
+      </nav> <!-- /Navigation -->
+    </div>
+</header>
+<div class="clearfix"></div>
+ <!-- =========================
+     Page Content Section      
+============================== -->
+<main id="content">
+    <!--container-->
+    <div class="container-fluid">
+      <!--row-->
+      <div class="row">
+        <!--col-md-->
+                                                <div class="col-md-9">
+                    		                  <div class="mg-blog-post-box"> 
+              <div class="mg-header">
+                                <div class="mg-blog-category"> 
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                </div>
+                                <h1 class="title single"> <a title="Permalink to: World Ranking 2022: Qualifying Phase for the Qatar World Cup: Matches and Results">
+                  World Ranking 2022: Qualifying Phase for the Qatar World Cup: Matches and Results</a>
+                </h1>
+
+                <div class="media mg-info-author-block"> 
+                                    <a class="mg-author-pic" href="../author/ad007/index.html"> <img alt='' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" data-lazy-srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' data-lazy-src="https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g" /><noscript><img alt='' src='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g' srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' /></noscript> </a>
+                                  <div class="media-body">
+                                        <h4 class="media-heading"><span>By</span><a href="../author/ad007/index.html">Ad007</a></h4>
+                                                            <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                      May 29, 2022</span>
+                                      </div>
+                </div>
+              </div>
+              <img width="664" height="373" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20664%20373'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="World Ranking 2022: Qualifying Phase for the Qatar World Cup: Matches and Results" data-lazy-src="../wp-content/uploads/2022/05/16166818968345.jpg" /><noscript><img width="664" height="373" src="../wp-content/uploads/2022/05/16166818968345.jpg" class="img-fluid wp-post-image" alt="World Ranking 2022: Qualifying Phase for the Qatar World Cup: Matches and Results" /></noscript>              <article class="small single">
+                <p>The road to the 2022 Qatar World Championship is open in Europe with <strong>55 selections</strong> in search of the thirteen places designated to UEFA.  The champion of each of the ten groups will have a insured passport.</p>
+<h2 class="ue-c-article__subheadline">World Ranking 2022: Matches and live results</h2>
+<h2 class="ue-c-article__subheadline">B GROUP</h2>
+<p>Spain <strong>1-1</strong> Greece (Final)</p>
+<p>Sweden <strong>1-0</strong> Georgian (Final)</p>
+<h2 class="ue-c-article__subheadline">GROUP C</h2>
+<p>Italy <strong>2-0</strong> Northern Ireland (Final)</p>
+<p>Bulgaria <strong>1-3</strong> Switzerland (Final)</p>
+<h2 class="ue-c-article__subheadline">GROUP F</h2>
+<p>Scotland <strong>2-2</strong> Austrian (Final)</p>
+<p>moldova <strong>1-1</strong> Faroe Islands (Final)</p>
+<p>Israel <strong>0-2</strong> Denmark (Final)</p>
+<h2 class="ue-c-article__subheadline">GROUP I</h2>
+<p>hungary <strong>3-3</strong> Poland (Final)</p>
+<p>Andorra <strong>0-1</strong> Albanian (Final)</p>
+<p>England <strong>5-0</strong> San Marino (Final)</p>
+<h2 class="ue-c-article__subheadline">GROUP J</h2>
+<p>Germany <strong>3-0</strong> Iceland (Final)</p>
+<p>Romanian <strong>3-2</strong> North Macedonia (Final)</p>
+<p>Liechtenstein <strong>0-1</strong> Armenian (Final)</p><source type="image/webp"  ><source type="image/jpeg"  ></source></source></p>
+<h2 class="ue-c-article__subheadline">SCOTLAND 2-2 AUSTRIA</h2>
+<p><strong>minute 85</strong>.  The Scots are saved from defeat with McGinn&#8217;s goal.</p>
+<h2 class="ue-c-article__subheadline">ROMANIAN 3-2 NORTH MACEDONIA</h2>
+<p><strong>86th minute. Hagi</strong> breaks the equalizer in favor of the Romanians.</p>
+<h2 class="ue-c-article__subheadline">ROMANIAN 2-2 NORTH MACEDONIA</h2>
+<p><strong>Minute 83.</strong> The Macedonians tied in two minutes with goals from <strong>Ademi and Trajkovski.</strong></p>
+<h2 class="ue-c-article__subheadline">MOLDOVA 1-1 FAROE ISLANDS</h2>
+<p><strong>minute 83</strong>.  The equalizer of the Faroe Islands arrives with the goal of <strong>Olsen</strong></p>
+<h2 class="ue-c-article__subheadline">LIECHTENSTEIN 0-1 ARMENIA</h2>
+<p><strong>minute 84</strong>.  The Armenians take the lead with their own goal <strong>Frommelt.</strong></p>
+<h2 class="ue-c-article__subheadline">HUNGARY 3-3 POLAND</h2>
+<p><strong>Minute 83. Lewandowski</strong> sign the tie polish.</p>
+<h2 class="ue-c-article__subheadline">ENGLAND 5-0 SAN MARINO</h2>
+<p><strong>Minute 83. Watkins</strong> signs the little hand of England.</p>
+<h2 class="ue-c-article__subheadline">SCOTLAND 1-2 AUSTRIA</h2>
+<p><strong>minute 80</strong>.  The Austrians go ahead with the goal of <strong>Kalajdzic</strong>.</p>
+<h2 class="ue-c-article__subheadline">HUNGARY 3-2 POLAND</h2>
+<p><strong>minute 78</strong>.  The Hungarians go ahead again with the goal of <strong>Orbán.</strong></p>
+<h2 class="ue-c-article__subheadline">SCOTLAND 1-1 AUSTRIA</h2>
+<p><strong>71 minute.</strong> The Scottish tie arrives with the goal of <strong>Hanley.</strong> The assist was from O&#8217;Donnell.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="2048" height="1365" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202048%201365'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="2048" height="1365" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<p><strong>Zlatan Ibrahimovic</strong> (39 years and 173 days) outperforms <strong>Thomas Ravelli</strong> (38 years and 59 days) as the oldest player to represent Sweden.</p>
+<h2 class="ue-c-article__subheadline">HUNGARY 2-2 POLAND</h2>
+<p><strong>minute 61</strong>.  The Polish tie arrives in just two minutes with goals from <strong>Piatek and Jozwiak</strong>.</p>
+<h2 class="ue-c-article__subheadline">HUNGARY 2-0 POLAND</h2>
+<p><strong>minute 53</strong>.  The Hungarians dominate and extend their advantage with the goal of <strong>Szalai</strong>.</p>
+<h2 class="ue-c-article__subheadline">GERMANY 3-0 ICELAND</h2>
+<p><strong>minute 56</strong>.  The third arrives with the signature of <strong>Gundogan</strong>. </p>
+<h2 class="ue-c-article__subheadline">SCOTLAND 0-1 AUSTRIA</h2>
+<p><strong>minute 55</strong>.  The Austrians go ahead with the goal of <strong>Kalajdzic</strong>.</p>
+<h2 class="ue-c-article__subheadline">ENGLAND 4-0 SAN MARINO</h2>
+<p><strong>minute 53</strong>.  The fourth of the English team arrives with a double of <strong>Calvert-Lewin</strong>.</p>
+<h2 class="ue-c-article__subheadline">ROMANIAN 2-0 NORTH MACEDONIA</h2>
+<p><strong>Minute 51.</strong> The Romanians extend the advantage with the goal of <strong>Michaela</strong>.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="680" height="680" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20680%20680'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836400_751_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.png"/><noscript><img width="680" height="680" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836400_751_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.png"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">ANDORRA 0-1 ALBANIA</h2>
+<p><strong>minute 41</strong>.  First away goal in the games of this time slot at 8:45 p.m.  Brand <strong>Lenjani</strong> for Albanians.</p>
+<h2 class="ue-c-article__subheadline">ITALY 2-0 NORTHERN IRELAND</h2>
+<p><strong>minute 39</strong>.  Extend the advantage <strong>Immobile</strong> after the assistance of Insigne.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="748" height="502" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20748%20502'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836400_602_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="748" height="502" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836400_602_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">SWEDEN 1-0 GEORGIA</h2>
+<p><strong>minute 53</strong>.  Great action by Ibra, controlling the ball with his chest and assisting <strong>Claesson</strong> who beats the goalkeeper on his way out.</p>
+<h2 class="ue-c-article__subheadline">ENGLAND 3-0 SAN MARINO</h2>
+<p><strong>Minute 31.</strong> The third of the English arrives with the goal of <strong>Sterling</strong>.</p>
+<h2 class="ue-c-article__subheadline">ROMANIAN 1-0 NORTH MACEDONIA</h2>
+<p><strong>minute 28</strong>.  The Romanians go ahead with the goal of <strong>Florin Tanase</strong>.</p>
+<p><strong>Gareth Southgate</strong> he is the first man to reach 50 England appearances as both a player and a manager.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="490" height="277" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20490%20277'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836400_350_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="490" height="277" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836400_350_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">ENGLAND 2-0 SAN MARINO</h2>
+<p><strong>minute 21</strong>.  Easy for the English at Wembley.  Extend the advantage <strong>Calvert-Lewin</strong> with an impressive header.</p>
+<h2 class="ue-c-article__subheadline">ENGLAND 1-0 SAN MARINO</h2>
+<p><strong>minute 14</strong>.  The English are ahead with the goal of <strong>Ward-Prowse</strong>.</p>
+<h2 class="ue-c-article__subheadline">ITALY 1-0 NORTHERN IRELAND</h2>
+<p><strong>Minute 14. Berardi</strong> scores the first for the &#8216;azzurra&#8217;.  His fourth goal in five games with the senior team.</p>
+<h2 class="ue-c-article__subheadline">MOLDOVA 1-0 FAROE ISLANDS</h2>
+<p><strong>minute 9</strong>.  The Moldovans take the initiative with the goal of <strong>Nikolaescu</strong>.</p>
+<h2 class="ue-c-article__subheadline">HUNGARY 1-0 POLAND</h2>
+<p><strong>minute 6</strong>.  The Hungarians strike first with the goal <strong>Roland Sallai</strong>.</p>
+<h2 class="ue-c-article__subheadline">GERMANY 2-0 ICELAND</h2>
+<p><strong>Minute 7.</strong> The German steamroller works.  The second bears the signature of <strong>Havertz.</strong></p><source type="image/webp"  ><source type="image/jpeg"  ><img width="749" height="491" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20749%20491'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836400_756_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="749" height="491" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836400_756_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">GERMANY 1-0 ICELAND</h2>
+<p><strong>minute 3</strong>.  The Germans go ahead with the goal of <strong>Goretzka</strong>.  Unappealable shot of the Bayern player to score the first of the Germans.  He has 13 goals in 30 games with his selection.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="1280" height="711" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20711'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836401_199_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="1280" height="711" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836401_199_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">BULGARIA 1-3 SWITZERLAND</h2>
+<p><strong>FINAL</strong>.  Vladimir Petkovic&#8217;s team made the most of their forceful staging and after seven minutes the Borussia Monchengladbach striker <strong>Breel Plunger</strong> I opened the bookmark.  Three later, the Benfica attacker <strong>Haris Seferović</strong> made the second and in the 13th, the Eintracht Frncfort midfielder <strong>Steven Zuber</strong> He scored the third and the clash was sentenced.</p>
+<h2 class="ue-c-article__subheadline">ISRAEL 0-2 DENMARK</h2>
+<p><strong>FINAL.</strong> The Barcelona striker <strong>Martin Braithwaite</strong> put the Danish triumph on track in Tel Aviv.  The Barça attacker took advantage of a pass from Jonas Older Wind, who scored the second goal in the second half, to beat goalkeeper Ofir Marciano and pave the way for Kasper Hjulmand&#8217;s team.</p>
+<h2 class="ue-c-article__subheadline">MOLDOVA &#8211; FAROE ISLANDS</h2><source type="image/webp"  ><source type="image/jpeg"  ><img width="580" height="320" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20580%20320'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836401_804_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="580" height="320" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836401_804_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">HUNGARY &#8211; POLAND</h2><source type="image/webp"  ><source type="image/jpeg"  ><img width="601" height="321" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20601%20321'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836401_827_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="601" height="321" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836401_827_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">LIECHTENSTEIN &#8211; ARMENIA</h2><source type="image/webp"  ><source type="image/jpeg"  ><img width="590" height="321" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20590%20321'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836401_889_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="590" height="321" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836401_889_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">SWEDEN &#8211; GEORGIA</h2><source type="image/webp"  ><source type="image/jpeg"  ><img width="584" height="321" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20584%20321'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836401_780_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="584" height="321" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836401_780_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">ROMANIAN &#8211; NORTH MACEDONIA</h2><source type="image/webp"  ><source type="image/jpeg"  ><img width="577" height="319" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20577%20319'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836402_420_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="577" height="319" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836402_420_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">ITALY &#8211; NORTHERN IRELAND</h2><source type="image/webp"  ><source type="image/jpeg"  ><img width="596" height="321" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20596%20321'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836402_21_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="596" height="321" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836402_21_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">SCOTLAND &#8211; AUSTRIA</h2><source type="image/webp"  ><source type="image/jpeg"  ><img width="582" height="319" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20582%20319'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836402_675_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="582" height="319" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836402_675_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">ANDORRA &#8211; ALBANIA</h2><source type="image/webp"  ><source type="image/jpeg"  ><img width="588" height="321" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20588%20321'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836402_996_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="588" height="321" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836402_996_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">GERMANY &#8211; ICELAND</h2><source type="image/webp"  ><source type="image/jpeg"  ><img width="582" height="320" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20582%20320'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836403_232_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="582" height="320" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836403_232_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">ENGLAND &#8211; SAN MARINO</h2><source type="image/webp"  ><source type="image/jpeg"  ><img width="589" height="320" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20589%20320'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836403_954_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="589" height="320" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836403_954_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">ISRAEL 0-2 DENMARK</h2>
+<p><strong>minute 67</strong>.  The Danes extend their lead with a goal from <strong>Jonas Old Wind</strong>.</p>
+<h2 class="ue-c-article__subheadline">BULGARIA 1-3 SWITZERLAND</h2>
+<p><strong>minute 46</strong>.  The Bulgarians react at the start of the second half.  cut distances <strong>Kiril Despodov</strong>.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="749" height="499" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20749%20499'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836403_567_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="749" height="499" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836403_567_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<p><strong>Eriksen</strong> He plays his 104th match with Denmark.  He is the fifth most capped player for the Danish national team, equaling the great Michael Laudrup.</p>
+<h2 class="ue-c-article__subheadline">BULGARIA 0-3 SWITZERLAND</h2>
+<p><strong>minute 12</strong>.  The Swiss let their hair down and now it&#8217;s the turn of <strong>Shaqiri</strong> culminating a great individual play. </p>
+<h2 class="ue-c-article__subheadline">BULGARIA 0-2 SWITZERLAND</h2>
+<p><strong>10 minute.</strong> Shaqiri attends <strong>Seferović</strong> who did not miss the opportunity to put the second on the scoreboard after a great shot.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="680" height="680" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20680%20680'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836403_941_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="680" height="680" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836403_941_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">ISRAEL 0-1 DENMARK</h2>
+<p><strong>13th minute.</strong> The Danes take the lead with a great goal from <strong>Braithwaite</strong>who defines with quality in the one-on-one against the Israeli goalkeeper.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="1280" height="711" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20711'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836404_667_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="1280" height="711" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836404_667_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">BULGARIA 0-1 SWITZERLAND</h2>
+<p><strong>minute 7</strong>.  The Swiss take the lead with a headed goal scored by <strong>Plunger</strong>.  He scores his first international goal in nearly two years.  The last time he found the net with the Swiss national team was the <strong>March 26, 2019</strong>in a draw (3-3) with Denmark.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="591" height="320" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20591%20320'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836404_689_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="591" height="320" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836404_689_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">ISRAEL &#8211; DENMARK</h2>
+<p>A very competitive Danish team visits Tel-Aviv.  Double presence of LaLiga Santander players in Denmark: <strong>Wass</strong> (Valencia) and <strong>Braithwaite</strong> (Barcelona).</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="576" height="319" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20576%20319'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836404_901_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="576" height="319" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836404_901_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<h2 class="ue-c-article__subheadline">BULGARIA &#8211; SWITZERLAND</h2>
+<p>The Swiss come to Sofa led by two players who play in the Premier League: <strong>Xhaka</strong> at Arsenal and <strong>Shaqiri</strong> at Liverpool.  Xherdan scored a hat-trick in the last Switzerland-Bulgaria match in September 2011.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="664" height="442" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20664%20442'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836404_153_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="664" height="442" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836404_153_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<p><strong>Chiesa enters the scene</strong>.  The Juventus attacker played in the house where his father Enrico shone. </p>
+<p><strong>A Germany without Kroos</strong>.  They host Iceland without the madridista and await Musiala&#8217;s possible debut. </p>
+<p>England broken against San Marino. <strong>Southgate will make changes</strong> in the first of their three meetings.</p>
+<p>&#8216;Lewy&#8217; wants to repeat.  The current Golden Boot was already the top scorer heading to the 2018 World Cup. <strong>Lewandowski adds 42 goals</strong> in 36 duels with Bayern.  Great historic scorer from Poland (63 goals) he is the second active European, after CR7, with more goals.  The &#8216;Sousa era&#8217; begins.</p><source type="image/webp"  ><source type="image/jpeg"  ><img width="2048" height="1536" class="ue-c-article__image" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202048%201536'%3E%3C/svg%3E" data-lazy-src="../wp-content/uploads/2022/05/1653836405_490_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/><noscript><img width="2048" height="1536" class="ue-c-article__image" alt="" src="../wp-content/uploads/2022/05/1653836405_490_World-Ranking-2022-Qualifying-Phase-for-the-Qatar-World-Cup.jpg"/></noscript></source></source></p>
+<p>the king returns <strong>Ibrahimović</strong> with Sweden, which will be Spain&#8217;s rival on the way to Qatar and in the Euro.  Ibra returns 5 years later as a hero and after playing for United, breaking his knee, becoming a reference in the MLS and giving life to Milan.</p>
+                                                     <script type="rocketlazyloadscript">
+    function pinIt()
+    {
+      var e = document.createElement('script');
+      e.setAttribute('type','text/javascript');
+      e.setAttribute('charset','UTF-8');
+      e.setAttribute('src','../../assets.pinterest.com/js/pinmarklet2a3b.js?r='+Math.random()*99999999);
+      document.body.appendChild(e);
+    }
+    </script>
+                     <div class="post-share">
+                          <div class="post-share-icons cf">
+                           
+                              <a href="https://www.facebook.com/sharer.php?u=https://why-what-who.com/world-ranking-2022-qualifying-phase-for-the-qatar-world-cup-matches-and-results/" class="link facebook" target="_blank" >
+                                <i class="fab fa-facebook"></i></a>
+                            
+            
+                              <a href="http://twitter.com/share?url=https://why-what-who.com/world-ranking-2022-qualifying-phase-for-the-qatar-world-cup-matches-and-results/&amp;text=World%20Ranking%202022%3A%20Qualifying%20Phase%20for%20the%20Qatar%20World%20Cup%3A%20Matches%20and%20Results" class="link twitter" target="_blank">
+                                <i class="fab fa-twitter"></i></a>
+            
+                              <a href="mailto:?subject=World%20Ranking%202022:%20Qualifying%20Phase%20for%20the%20Qatar%20World%20Cup:%20Matches%20and%20Results&#038;body=https://why-what-who.com/world-ranking-2022-qualifying-phase-for-the-qatar-world-cup-matches-and-results/" class="link email" target="_blank" >
+                                <i class="fas fa-envelope"></i></a>
+
+
+                              <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://why-what-who.com/world-ranking-2022-qualifying-phase-for-the-qatar-world-cup-matches-and-results/&amp;title=World%20Ranking%202022%3A%20Qualifying%20Phase%20for%20the%20Qatar%20World%20Cup%3A%20Matches%20and%20Results" class="link linkedin" target="_blank" >
+                                <i class="fab fa-linkedin"></i></a>
+
+                             <a href="https://telegram.me/share/url?url=https://why-what-who.com/world-ranking-2022-qualifying-phase-for-the-qatar-world-cup-matches-and-results/&amp;text&amp;title=World%20Ranking%202022%3A%20Qualifying%20Phase%20for%20the%20Qatar%20World%20Cup%3A%20Matches%20and%20Results" class="link telegram" target="_blank" >
+                                <i class="fab fa-telegram"></i></a>
+
+                              <a href="javascript:pinIt();" class="link pinterest"><i class="fab fa-pinterest"></i></a>    
+                          </div>
+                    </div>
+
+                <div class="clearfix mb-3"></div>
+                
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="../know-all-the-data-on-the-hard-drive-or-ssd-with-crystaldiskinfo/index.html" rel="prev">Know all the data on the hard drive or SSD with CrystalDiskInfo <div class="fas fa-angle-double-right"></div><span></span></a></div><div class="nav-next"><a href="../this-xiaomi-with-5g-and-120-hz-at-an-unbeatable-price/index.html" rel="next"><div class="fas fa-angle-double-left"></div><span></span> This Xiaomi with 5G and 120 Hz at an unbeatable price</a></div></div>
+	</nav>                          </article>
+            </div>
+		                 <div class="media mg-info-author-block">
+            <a class="mg-author-pic" href="../author/ad007/index.html"><img alt='' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" data-lazy-srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' data-lazy-src="https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g" /><noscript><img alt='' src='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g' srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' /></noscript></a>
+                <div class="media-body">
+                  <h4 class="media-heading">By <a href ="../author/ad007/index.html">Ad007</a></h4>
+                  <p></p>
+                </div>
+            </div>
+                          <div class="mg-featured-slider p-3 mb-4">
+                        <!--Start mg-realated-slider -->
+                        <div class="mg-sec-title">
+                            <!-- mg-sec-title -->
+                                                        <h4>Related Post</h4>
+                        </div>
+                        <!-- // mg-sec-title -->
+                           <div class="row">
+                                <!-- featured_post -->
+                                                                      <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/07/asi-podemos-saber-comprar-router-nuevo.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html" title="Permalink to: So you can know if you should buy a new router for the Internet">
+                                              So you can know if you should buy a new router for the Internet</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              Jul 12, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                        <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/medium.GettyImages-1172049905-e1637343496829.jpeg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../the-classified-countries-and-the-dates/index.html" title="Permalink to: The classified countries and the dates">
+                                              The classified countries and the dates</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              May 30, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                        <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/apps-autotune-android.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../best-autotune-apps-for-android/index.html" title="Permalink to: Best Autotune Apps for Android">
+                                              Best Autotune Apps for Android</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              May 30, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                </div>
+                            
+                    </div>
+                    <!--End mg-realated-slider -->
+                        </div>
+             <!--sidebar-->
+          <!--col-md-3-->
+            <aside class="col-md-3">
+                  
+<aside id="secondary" class="widget-area" role="complementary">
+	<div id="sidebar-right" class="mg-sidebar">
+		<div id="block-2" class="mg-widget widget_block widget_search"><form role="search" method="get" action="https://why-what-who.com/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"><label for="wp-block-search__input-1" class="wp-block-search__label">Search</label><div class="wp-block-search__inside-wrapper"><input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" value="" placeholder=""  required /><button type="submit" class="wp-block-search__button ">Search</button></div></form></div><div id="block-3" class="mg-widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container"><h2>Recent Posts</h2><ul class="wp-block-latest-posts__list wp-block-latest-posts"><li><a href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html">So you can know if you should buy a new router for the Internet</a></li>
+<li><a href="../the-classified-countries-and-the-dates/index.html">The classified countries and the dates</a></li>
+<li><a href="../best-autotune-apps-for-android/index.html">Best Autotune Apps for Android</a></li>
+<li><a href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html">Photo, music and video extensions for Mozilla Firefox</a></li>
+<li><a href="../cristina-and-alberto-repeat-their-show-until-exhaustion-public-informant/index.html">Cristina and Alberto repeat their show until exhaustion – Public Informant</a></li>
+</ul></div></div></div>	</div>
+</aside><!-- #secondary -->
+            </aside>
+          <!--/col-md-3-->
+      <!--/sidebar-->
+          </div>
+  </div>
+</main>
+  <div class="container-fluid mr-bot40 mg-posts-sec-inner">
+        <div class="missed-inner">
+        <div class="row">
+                        <div class="col-md-12">
+                <div class="mg-sec-title">
+                    <!-- mg-sec-title -->
+                    <h4>You missed</h4>
+                </div>
+            </div>
+                            <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/07/asi-podemos-saber-comprar-router-nuevo.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html" title="Permalink to: So you can know if you should buy a new router for the Internet"> So you can know if you should buy a new router for the Internet</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/07/index.html">
+         Jul 12, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/medium.GettyImages-1172049905-e1637343496829.jpeg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../the-classified-countries-and-the-dates/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../the-classified-countries-and-the-dates/index.html" title="Permalink to: The classified countries and the dates"> The classified countries and the dates</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/apps-autotune-android.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../best-autotune-apps-for-android/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../best-autotune-apps-for-android/index.html" title="Permalink to: Best Autotune Apps for Android"> Best Autotune Apps for Android</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/Extensiones-de-fotos-musica-y-videos-para-Mozilla-Firefox.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html" title="Permalink to: Photo, music and video extensions for Mozilla Firefox"> Photo, music and video extensions for Mozilla Firefox</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                     
+
+                </div>
+            </div>
+        </div>
+<!--==================== FOOTER AREA ====================-->
+        <footer> 
+            <div class="overlay" style="background-color: ;">
+                <!--Start mg-footer-widget-area-->
+                                 <!--End mg-footer-widget-area-->
+                <!--Start mg-footer-widget-area-->
+                <div class="mg-footer-bottom-area">
+                    <div class="container-fluid">
+                        <div class="divide-line"></div>
+                        <div class="row align-items-center">
+                            <!--col-md-4-->
+                            <div class="col-md-6">
+                                                             <div class="site-branding-text">
+                              <h1 class="site-title"> <a href="../index.html" rel="home">Why-What-Who</a></h1>
+                              <p class="site-description">Why What Who Info News</p>
+                              </div>
+                                                          </div>
+
+                             
+                            <div class="col-md-6 text-right text-xs">
+                                
+                            <ul class="mg-social">
+                                    
+                                                                         
+                                                                        
+                                                                 </ul>
+
+
+                            </div>
+                            <!--/col-md-4-->  
+                             
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/container-->
+                </div>
+                <!--End mg-footer-widget-area-->
+
+                <div class="mg-footer-copyright">
+                    <div class="container-fluid">
+                        <div class="row">
+                                                      <div class="col-md-6 text-xs">
+                                                            <p>info@why-what-who.com</p>
+                            </div>
+
+
+                                                        <div class="col-md-6 text-right text-xs">
+                                <ul class="info-right"><li class="nav-item menu-item "><a class="nav-link " href="../index.html" title="Home">Home</a></li></ul>
+                            </div>
+                                                  </div>
+                    </div>
+                </div>
+            </div>
+            <!--/overlay-->
+        </footer>
+        <!--/footer-->
+    </div>
+  </div>
+    <!--/wrapper-->
+    <!--Scroll To Top-->
+    <a href="#" class="ta_upscr bounceInup animated"><i class="fas fa-angle-up"></i></a>
+    <!--/Scroll To Top-->
+<!-- /Scroll To Top -->
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/why-what-who.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("../index.html")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("../index.html")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min41a3.js?ver=5.8' id='wp-embed-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/custom75dd.js?ver=1652887642' id='newsup-custom-js' defer></script>
+	<script type="rocketlazyloadscript">
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="../wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-228577383-3"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-228577383-3');
+</script>
+
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1657618387 -->

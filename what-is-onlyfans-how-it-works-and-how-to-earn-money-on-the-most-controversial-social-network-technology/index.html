@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.userEventHandler=this.triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e.triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick")}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<title>What is OnlyFans, how it works and how to earn money on the most controversial social network |  Technology &#8211; Why-What-Who</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" /></noscript>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link href='https://fonts.gstatic.com/' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Why-What-Who &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Why-What-Who &raquo; Comments Feed" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Why-What-Who &raquo; What is OnlyFans, how it works and how to earn money on the most controversial social network |  Technology Comments Feed" href="feed/index.html" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min41a3.css?ver=5.8' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wp_automatic_gallery_style-css'  href='../wp-content/cache/min/1/wp-content/plugins/wp-automatic/css/wp-automatic75dd.css?ver=1652887642' type='text/css' media='all' />
+
+<link data-minify="1" rel='stylesheet' id='bootstrap-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/bootstrap8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='newsup-style-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/style8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='newsup-default-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/colors/default8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-5-all-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/font-awesome/css/all.min8d16.css?ver=1652887641' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css'  href='../wp-content/themes/newsup/css/font-awesome/css/v4-shims.min41a3.css?ver=5.8' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='owl-carousel-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/owl.carousel8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='smartmenus-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/jquery.smartmenus.bootstrap8d16.css?ver=1652887641' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/plugins/wp-automatic/js/main-front75dd.js?ver=1652887642' id='wp_automatic_gallery-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/navigation75dd.js?ver=1652887642' id='newsup-navigation-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/bootstrap75dd.js?ver=1652887642' id='bootstrap-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-content/themes/newsup/js/owl.carousel.min41a3.js?ver=5.8' id='owl-carousel-min-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.smartmenus75dd.js?ver=1652887642' id='smartmenus-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.smartmenus.bootstrap75dd.js?ver=1652887642' id='bootstrap-smartmenus-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.marquee75dd.js?ver=1652887642' id='newsup-marquee-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/main75dd.js?ver=1652887642' id='newsup-main-js-js' defer></script>
+<link rel="https://api.w.org/" href="../wp-json/index.html" /><link rel="alternate" type="application/json" href="../wp-json/wp/v2/posts/563.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='../index03c9.html?p=563' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed07cf.json?url=https%3A%2F%2Fwhy-what-who.com%2Fwhat-is-onlyfans-how-it-works-and-how-to-earn-money-on-the-most-controversial-social-network-technology%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed3b80?url=https%3A%2F%2Fwhy-what-who.com%2Fwhat-is-onlyfans-how-it-works-and-how-to-earn-money-on-the-most-controversial-social-network-technology%2F&amp;format=xml" />
+<link rel="pingback" href="../xmlrpc.php"><style type="text/css" id="custom-background-css">
+    .wrapper { background-color: eeeeee; }
+</style>
+    <style type="text/css">
+            body .site-title a,
+        body .site-description {
+            color: #fff;
+        }
+
+        .site-branding-text .site-title a {
+                font-size: px;
+            }
+
+            @media only screen and (max-width: 640px) {
+                .site-branding-text .site-title a {
+                    font-size: 40px;
+
+                }
+            }
+
+            @media only screen and (max-width: 375px) {
+                .site-branding-text .site-title a {
+                    font-size: 32px;
+
+                }
+            }
+
+        </style>
+    <style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #eeeeee; }
+</style>
+	<link rel="icon" href="../wp-content/uploads/2022/05/cropped-w-32x32.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2022/05/cropped-w-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../wp-content/uploads/2022/05/cropped-w-180x180.png" />
+<meta name="msapplication-TileImage" content="https://why-what-who.com/wp-content/uploads/2022/05/cropped-w-270x270.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript" async src="../../pagead2.googlesyndication.com/pagead/js/f4047.txt?client=ca-pub-1731162805004860" crossorigin="anonymous"></script>
+</head>
+<body class="post-template-default single single-post postid-563 single-format-standard custom-background wp-embed-responsive  ta-hide-date-author-in-list" >
+<a href="https://orgwordpress.org/">orgwordpress.org</a><div id="page" class="site">
+<a class="skip-link screen-reader-text" href="#content">
+Skip to content</a>
+    <div class="wrapper" id="custom-background-css">
+        <header class="mg-headwidget">
+            <!--==================== TOP BAR ====================-->
+
+            <!--<div class="mg-head-detail hidden-xs">
+    <div class="container-fluid">
+        <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                <ul class="info-left">
+                            <li>        </li>
+                    </ul>
+            </div>
+                    </div>
+    </div>
+</div>
+-->
+            <div class="clearfix"></div>
+                        <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/cropped-250x215-1.png" class="mg-nav-widget-area-back rocket-lazyload" style=''>
+                        <div class="overlay">
+              <div class="inner"  style="background-color:rgba(32,47,91,0.4);" > 
+                <div class="container-fluid">
+                    <div class="mg-nav-widget-area">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 col-sm-4 text-center-xs">
+                                <div class="navbar-header">
+                                                                <div class="site-branding-text">
+                                <h1 class="site-title"> <a href="../index.html" rel="home">Why-What-Who</a></h1>
+                                <p class="site-description">Why What Who Info News</p>
+                                </div>
+                                                              </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+          </div>
+    <div class="mg-menu-full">
+      <nav class="navbar navbar-expand-lg navbar-wp">
+        <div class="container-fluid flex-row-reverse">
+          <!-- Right nav -->
+                    <div class="m-header d-flex pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
+                                                <a class="mobilehomebtn" href="../index.html"><span class="fas fa-home"></span></a>
+                        <!-- navbar-toggle -->
+                        <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <i class="fas fa-bars"></i>
+                        </button>
+                        <!-- /navbar-toggle -->
+                                                <div class="dropdown show mg-search-box pr-2">
+                            <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <i class="fas fa-search"></i>
+                            </a>
+
+                            <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
+                        <form role="search" method="get" id="searchform" action="https://why-what-who.com/">
+  <div class="input-group">
+    <input type="search" class="form-control" placeholder="Search" value="" name="s" />
+    <span class="input-group-btn btn-default">
+    <button type="submit" class="btn"> <i class="fas fa-search"></i> </button>
+    </span> </div>
+</form>                      </div>
+                        </div>
+                                              
+                    </div>
+                    <!-- /Right nav -->
+         
+          
+                  <div class="collapse navbar-collapse" id="navbar-wp">
+                  	<div class="d-md-block">
+                  <ul class="nav navbar-nav mr-auto"><li class="nav-item menu-item "><a class="nav-link " href="../index.html" title="Home">Home</a></li></ul>
+        				</div>		
+              		</div>
+          </div>
+      </nav> <!-- /Navigation -->
+    </div>
+</header>
+<div class="clearfix"></div>
+ <!-- =========================
+     Page Content Section      
+============================== -->
+<main id="content">
+    <!--container-->
+    <div class="container-fluid">
+      <!--row-->
+      <div class="row">
+        <!--col-md-->
+                                                <div class="col-md-9">
+                    		                  <div class="mg-blog-post-box"> 
+              <div class="mg-header">
+                                <div class="mg-blog-category"> 
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                </div>
+                                <h1 class="title single"> <a title="Permalink to: What is OnlyFans, how it works and how to earn money on the most controversial social network |  Technology">
+                  What is OnlyFans, how it works and how to earn money on the most controversial social network |  Technology</a>
+                </h1>
+
+                <div class="media mg-info-author-block"> 
+                                    <a class="mg-author-pic" href="../author/ad007/index.html"> <img alt='' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" data-lazy-srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' data-lazy-src="https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g" /><noscript><img alt='' src='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g' srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' /></noscript> </a>
+                                  <div class="media-body">
+                                        <h4 class="media-heading"><span>By</span><a href="../author/ad007/index.html">Ad007</a></h4>
+                                                            <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                      May 15, 2022</span>
+                                      </div>
+                </div>
+              </div>
+              <img width="1200" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20800'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="What is OnlyFans, how it works and how to earn money on the most controversial social network |  Technology" data-lazy-srcset="https://why-what-who.com/wp-content/uploads/2022/05/onlyfans-2556899.jpg 1200w, https://why-what-who.com/wp-content/uploads/2022/05/onlyfans-2556899-300x200.jpg 300w, https://why-what-who.com/wp-content/uploads/2022/05/onlyfans-2556899-1024x683.jpg 1024w, https://why-what-who.com/wp-content/uploads/2022/05/onlyfans-2556899-768x512.jpg 768w" data-lazy-sizes="(max-width: 1200px) 100vw, 1200px" data-lazy-src="../wp-content/uploads/2022/05/onlyfans-2556899.jpg" /><noscript><img width="1200" height="800" src="../wp-content/uploads/2022/05/onlyfans-2556899.jpg" class="img-fluid wp-post-image" alt="What is OnlyFans, how it works and how to earn money on the most controversial social network |  Technology" srcset="https://why-what-who.com/wp-content/uploads/2022/05/onlyfans-2556899.jpg 1200w, https://why-what-who.com/wp-content/uploads/2022/05/onlyfans-2556899-300x200.jpg 300w, https://why-what-who.com/wp-content/uploads/2022/05/onlyfans-2556899-1024x683.jpg 1024w, https://why-what-who.com/wp-content/uploads/2022/05/onlyfans-2556899-768x512.jpg 768w" sizes="(max-width: 1200px) 100vw, 1200px" /></noscript>              <article class="small single">
+                <p>In the last year <strong>OnlyFans has caught the attention of the media</strong>.  Mainly, the news related to the platform has focused on reporting the celebrities who have opened an account, as well as detailing how much some celebrities earn on OnlyFans.</p>
+<p>The media make it clear that it is a social network in which nudes and erotic and sexual content can be published, but on many occasions the information does not go further. </p>
+<p>For this reason, you may be wondering <strong>what is OnlyFans, how does it work, what is its business model and why has it become so popular in recent months.</strong></p>
+<p>During isolation, many of us are turning to video games to pass the time.  But playing in company is always more fun than doing it alone, so we leave you with a list of apps that you can play with your partner</p>
+<p>If you have heard about this social network for adults but you are not very clear about the concept, keep reading because in this report we are going to explain it to you<strong> everything you need to know about OnlyFans.</strong></p>
+<p><u><strong>Everything you need to know about OnlyFans</strong></u></p>
+<h2 class="title">What is OnlyFans?</h2>
+<p>What is Only Fans is the first question asked by people who hear about the platform in the media.  Is about <strong>an adults-only social network where content creators share erotic or sexual images and videos</strong> of all types and categories. </p>
+<p>And it is that, unlike conventional social networks, this platform not only does not censor these contents, but they are its main claim. </p>
+<p>However, <strong>not everything that is published on OnlyFans is erotic</strong>.  There are also accounts of famous chefs, artists or fitness stars who have a profile and share photos and videos with their followers.</p>
+<p>Although there are free channels, in most cases, in order to access the content, users have to become fans of the person who publishes it.  For it, <strong>they have to subscribe to the profile and pay a monthly fee, </strong>whose amount is set by the creator within minimum and maximum margins established by the platform.</p>
+<p>Have you heard of Omegle but are not sure what it is?  We tell you what one of the most dangerous social networks that you should avoid consists of and how it works.</p>
+<p>Even though Only Fans&#8217; popularity has skyrocketed recently, <strong>it is not a newly created service.  The platform was born in 2016</strong> and initially it was not a social network for adults, but a meeting point between artists and their followers. </p>
+<p>The idea was to offer a place where<strong> artists will provide their fans with exclusive content</strong>which they could access in exchange for a monthly subscription.</p>
+<p>But the initial approach took a turn in 2018. Leonid Radvinsky, owner of the live sex website MyFreeCams, bought 75% of Only Fans and became the director of the platform, giving it the identity it has today. today.</p>
+<p>In May 2020, Tim Stokely, founder and CEO of OnlyFans, claimed that the adult social network had more than 30 million registered users. <strong>Subscriptions grew incredibly during the pandemic: in April alone they increased by more than 50%</strong>and the number of creators also skyrocketed, reaching 450,000 at the time.</p>
+<h2 class="title">How does OnlyFans work?</h2>
+<p><strong>In Onlyfans there are two types of users: fans and content creators</strong>and in both cases it is necessary to be over 18 years of age to access the social network. </p>
+<p>Fans can create their account for free to explore the people who are publishing content on the platform, but as we said to have access to the photos and videos that are shared, it is necessary to subscribe and pay the monthly fee set by the creator.</p>
+<p><strong>Apart from seeing the content that the creators publish, fans can receive paid messages with photos or premium videos</strong>and to be able to view them they have to make an additional payment. </p>
+<p>In addition, they can also write private messages to request personalized requests, such as photos or videos with certain characteristics, and the creator can provide them with this content in exchange for an extra payment called a tip.</p>
+<p>Menéame is a community focused on current news, stories and curiosities that the users themselves publish, for others to vote for and upload to the front page.  Let&#8217;s see how it came about, and what are the reasons for its success.</p>
+<p><strong>In Onlyfans anyone can become a content creator</strong>.  All you have to do is create a free account and verify registration with a selfie that allows the platform to confirm the user&#8217;s identity. </p>
+<p>Once this is done, the next step in OnlyFans is to set the monthly subscription fee for fans, and start uploading content to attract followers. </p>
+<p><strong>And how much money is earned on Onlyfans? </strong>Content creators receive income through three ways: the subscription fee, paid messages and tips.  The amount of the subscription can range between 4.99 and 49.99 dollars, and according to the platform you can earn up to 7,495 dollars per month. </p>
+<p>Beyond subscriptions, creators can also earn money from paid messages and tips.  Fans have to pay up to $100 for paid messages, while the cap on tips can be as high as $200. </p>
+<p>The daily spending of fans cannot exceed 500 dollars in the case of new users, but if they have been using the social network in a stable way for some time, this limit is increased (although it is not specified what the maximum would be in this case).</p>
+<p>And how is the Onlyfans payment system? <strong>Creators receive 80% of their earnings revenue, including subscribers, paid messages and tips</strong>.</p>
+<p>The remaining 20% ​​covers referral payments, payment processing, hosting, support, and all other services. </p>
+<h2 class="title">The OnlyFans Boom</h2>
+<p>As we said at the beginning, OnlyFans is not a new platform, but until recently it was not that popular. <strong>The boom of the social network for adults occurs as a result of the confinement</strong>.  Last April, Beyoncé released a charity remix of Savage with rapper Megan Thee Stallion, the proceeds of which went to charity for the pandemic. </p>
+<p>In the lyrics of the song we find a reference to OnlyFans, and as Stokely explains in BuzzFeed News, <strong>on those dates the platform registered some 200,000 new users a day and between 7,000 and 8,000 new content creators.</strong></p>
+<p>And why has the quarantine fueled the meteoric growth of OnlyFans?  On the one hand, home confinement and social distancing measures <strong>have favored the consumption of adult content by users. </strong></p>
+<p>It is the reference forum on the Internet.  This is where things happen before anywhere.  We teach you how to use it so as not to get lost in its immensity.</p>
+<p>From the point of view of content creators, professionals in the porn industry, models, influencers and other famous people <strong>they have seen in OnlyFans a way out of the labor and economic problems derived from the restrictions of the pandemic</strong>. </p>
+<p>Given the lack of projects and job opportunities, they have discovered that this social network can be a real gold mine in which it is possible to earn thousands of dollars a month by publishing erotic or sexual content. </p>
+<h2 class="title">How much money do celebrities make on OnlyFans?</h2>
+<p>In OnlyFans anyone can earn money, but <strong>Thanks to their popularity, celebrities have more options to achieve stratospheric figures. </strong></p>
+<p><strong>One of the most notorious cases is that of Bella Thorne</strong>, the popular former Disney girl.  The actress joined the platform in August 2020, managed to earn more than a million dollars in the first 24 hours and added more than two million dollars in less than a week. </p>
+<p>The problem is that <strong>the fans were very unhappy</strong>.  She promised nudes for a $200 payment, but fans received photos of Thorne in her underwear. </p>
+<p>This caused a wave of chargebacks from fans, which led the platform to change its policy of paying creators, who today have restrictions that limit the amount they can collect and the speed with which they can be paid. They can reap the benefits of your content.</p>
+<p>We give you some tips to download any video from Facebook from all your devices and without the need for other applications.</p>
+<p><strong>There are many other content creators who make a lot of money on Only Fans</strong>.  Ellie-Jean Coffey, a former professional surfer, managed to amass 3 million dollars in three months.  Aella, an adult film actress, has more than 26,000 fans and earns around $100,000 a month. </p>
+<p>Erica North is another recognized star of the social network with more than 150,000 fans.  From February 2019 to November 2020, she generated more than $215,000 with her account, about $14,000 a month.</p>
+<p><strong>In Spain, various well-known faces have confessed to earning large amounts of money on OnlyFans.</strong> Daniela Blume is one of the celebrities who obtain the most benefits on the national scene, and affirms that she came to earn 20,000 euros in a single day. </p>
+<h2 class="title">The controversy with pornographic content</h2>
+<p>But in August 2021 there was an important debate on OnlyFans that is going to have a series of consequences that are difficult to foresee: OnlyFans stopped admitting pornographic content on the platform for a few days.</p>
+<p>The reason for this change arose from<strong> the need to seek greater financing and the problems that investors have caused them</strong> and banks due to its theme, such as PayPal.  Putting money on an erotic website is admissible, but on one with pornographic content it is a significant risk and they do not want to associate their name with these practices.</p>
+<p>In addition, with the aim of avoiding controversy, OnlyFans was asked that all people who offered sex be <strong>identified and prove that they are of legal age</strong>something that is almost impossible for the platform.</p>
+<p>However, days later they returned to the previous situation and stated that OnlyFans allowed sexually explicit content on their platform again.  It seems that the reaction to the veto of this content showed them the problem that they could experience in terms of the exit of users and influencers.</p>
+<p>It is not known what will happen from now on or how they will carry out the negotiation to survive as a company, what is clear is that any modification in the terms of this content <strong>can forever change what the platform is like</strong>.</p>
+                                                     <script type="rocketlazyloadscript">
+    function pinIt()
+    {
+      var e = document.createElement('script');
+      e.setAttribute('type','text/javascript');
+      e.setAttribute('charset','UTF-8');
+      e.setAttribute('src','../../assets.pinterest.com/js/pinmarklet2a3b.js?r='+Math.random()*99999999);
+      document.body.appendChild(e);
+    }
+    </script>
+                     <div class="post-share">
+                          <div class="post-share-icons cf">
+                           
+                              <a href="https://www.facebook.com/sharer.php?u=https://why-what-who.com/what-is-onlyfans-how-it-works-and-how-to-earn-money-on-the-most-controversial-social-network-technology/" class="link facebook" target="_blank" >
+                                <i class="fab fa-facebook"></i></a>
+                            
+            
+                              <a href="http://twitter.com/share?url=https://why-what-who.com/what-is-onlyfans-how-it-works-and-how-to-earn-money-on-the-most-controversial-social-network-technology/&amp;text=What%20is%20OnlyFans%2C%20how%20it%20works%20and%20how%20to%20earn%20money%20on%20the%20most%20controversial%20social%20network%20%7C%20%20Technology" class="link twitter" target="_blank">
+                                <i class="fab fa-twitter"></i></a>
+            
+                              <a href="mailto:?subject=What%20is%20OnlyFans,%20how%20it%20works%20and%20how%20to%20earn%20money%20on%20the%20most%20controversial%20social%20network%20|%20%20Technology&#038;body=https://why-what-who.com/what-is-onlyfans-how-it-works-and-how-to-earn-money-on-the-most-controversial-social-network-technology/" class="link email" target="_blank" >
+                                <i class="fas fa-envelope"></i></a>
+
+
+                              <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://why-what-who.com/what-is-onlyfans-how-it-works-and-how-to-earn-money-on-the-most-controversial-social-network-technology/&amp;title=What%20is%20OnlyFans%2C%20how%20it%20works%20and%20how%20to%20earn%20money%20on%20the%20most%20controversial%20social%20network%20%7C%20%20Technology" class="link linkedin" target="_blank" >
+                                <i class="fab fa-linkedin"></i></a>
+
+                             <a href="https://telegram.me/share/url?url=https://why-what-who.com/what-is-onlyfans-how-it-works-and-how-to-earn-money-on-the-most-controversial-social-network-technology/&amp;text&amp;title=What%20is%20OnlyFans%2C%20how%20it%20works%20and%20how%20to%20earn%20money%20on%20the%20most%20controversial%20social%20network%20%7C%20%20Technology" class="link telegram" target="_blank" >
+                                <i class="fab fa-telegram"></i></a>
+
+                              <a href="javascript:pinIt();" class="link pinterest"><i class="fab fa-pinterest"></i></a>    
+                          </div>
+                    </div>
+
+                <div class="clearfix mb-3"></div>
+                
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="../the-best-xiaomi-smart-tv-is-now-at-its-minimum-price/index.html" rel="prev">The best Xiaomi Smart TV is now at its minimum price <div class="fas fa-angle-double-right"></div><span></span></a></div><div class="nav-next"><a href="../how-to-voice-control-your-windows-pc/index.html" rel="next"><div class="fas fa-angle-double-left"></div><span></span> How to voice control your Windows PC</a></div></div>
+	</nav>                          </article>
+            </div>
+		                 <div class="media mg-info-author-block">
+            <a class="mg-author-pic" href="../author/ad007/index.html"><img alt='' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" data-lazy-srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' data-lazy-src="https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g" /><noscript><img alt='' src='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g' srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' /></noscript></a>
+                <div class="media-body">
+                  <h4 class="media-heading">By <a href ="../author/ad007/index.html">Ad007</a></h4>
+                  <p></p>
+                </div>
+            </div>
+                          <div class="mg-featured-slider p-3 mb-4">
+                        <!--Start mg-realated-slider -->
+                        <div class="mg-sec-title">
+                            <!-- mg-sec-title -->
+                                                        <h4>Related Post</h4>
+                        </div>
+                        <!-- // mg-sec-title -->
+                           <div class="row">
+                                <!-- featured_post -->
+                                                                      <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/07/asi-podemos-saber-comprar-router-nuevo.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html" title="Permalink to: So you can know if you should buy a new router for the Internet">
+                                              So you can know if you should buy a new router for the Internet</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              Jul 12, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                        <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/medium.GettyImages-1172049905-e1637343496829.jpeg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../the-classified-countries-and-the-dates/index.html" title="Permalink to: The classified countries and the dates">
+                                              The classified countries and the dates</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              May 30, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                        <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/apps-autotune-android.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../best-autotune-apps-for-android/index.html" title="Permalink to: Best Autotune Apps for Android">
+                                              Best Autotune Apps for Android</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              May 30, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                </div>
+                            
+                    </div>
+                    <!--End mg-realated-slider -->
+                        </div>
+             <!--sidebar-->
+          <!--col-md-3-->
+            <aside class="col-md-3">
+                  
+<aside id="secondary" class="widget-area" role="complementary">
+	<div id="sidebar-right" class="mg-sidebar">
+		<div id="block-2" class="mg-widget widget_block widget_search"><form role="search" method="get" action="https://why-what-who.com/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"><label for="wp-block-search__input-1" class="wp-block-search__label">Search</label><div class="wp-block-search__inside-wrapper"><input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" value="" placeholder=""  required /><button type="submit" class="wp-block-search__button ">Search</button></div></form></div><div id="block-3" class="mg-widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container"><h2>Recent Posts</h2><ul class="wp-block-latest-posts__list wp-block-latest-posts"><li><a href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html">So you can know if you should buy a new router for the Internet</a></li>
+<li><a href="../the-classified-countries-and-the-dates/index.html">The classified countries and the dates</a></li>
+<li><a href="../best-autotune-apps-for-android/index.html">Best Autotune Apps for Android</a></li>
+<li><a href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html">Photo, music and video extensions for Mozilla Firefox</a></li>
+<li><a href="../cristina-and-alberto-repeat-their-show-until-exhaustion-public-informant/index.html">Cristina and Alberto repeat their show until exhaustion – Public Informant</a></li>
+</ul></div></div></div>	</div>
+</aside><!-- #secondary -->
+            </aside>
+          <!--/col-md-3-->
+      <!--/sidebar-->
+          </div>
+  </div>
+</main>
+  <div class="container-fluid mr-bot40 mg-posts-sec-inner">
+        <div class="missed-inner">
+        <div class="row">
+                        <div class="col-md-12">
+                <div class="mg-sec-title">
+                    <!-- mg-sec-title -->
+                    <h4>You missed</h4>
+                </div>
+            </div>
+                            <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/07/asi-podemos-saber-comprar-router-nuevo.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../so-you-can-know-if-you-should-buy-a-new-router-for-the-internet/index.html" title="Permalink to: So you can know if you should buy a new router for the Internet"> So you can know if you should buy a new router for the Internet</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/07/index.html">
+         Jul 12, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/medium.GettyImages-1172049905-e1637343496829.jpeg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../the-classified-countries-and-the-dates/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../the-classified-countries-and-the-dates/index.html" title="Permalink to: The classified countries and the dates"> The classified countries and the dates</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/apps-autotune-android.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../best-autotune-apps-for-android/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../best-autotune-apps-for-android/index.html" title="Permalink to: Best Autotune Apps for Android"> Best Autotune Apps for Android</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/Extensiones-de-fotos-musica-y-videos-para-Mozilla-Firefox.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html" title="Permalink to: Photo, music and video extensions for Mozilla Firefox"> Photo, music and video extensions for Mozilla Firefox</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                     
+
+                </div>
+            </div>
+        </div>
+<!--==================== FOOTER AREA ====================-->
+        <footer> 
+            <div class="overlay" style="background-color: ;">
+                <!--Start mg-footer-widget-area-->
+                                 <!--End mg-footer-widget-area-->
+                <!--Start mg-footer-widget-area-->
+                <div class="mg-footer-bottom-area">
+                    <div class="container-fluid">
+                        <div class="divide-line"></div>
+                        <div class="row align-items-center">
+                            <!--col-md-4-->
+                            <div class="col-md-6">
+                                                             <div class="site-branding-text">
+                              <h1 class="site-title"> <a href="../index.html" rel="home">Why-What-Who</a></h1>
+                              <p class="site-description">Why What Who Info News</p>
+                              </div>
+                                                          </div>
+
+                             
+                            <div class="col-md-6 text-right text-xs">
+                                
+                            <ul class="mg-social">
+                                    
+                                                                         
+                                                                        
+                                                                 </ul>
+
+
+                            </div>
+                            <!--/col-md-4-->  
+                             
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/container-->
+                </div>
+                <!--End mg-footer-widget-area-->
+
+                <div class="mg-footer-copyright">
+                    <div class="container-fluid">
+                        <div class="row">
+                                                      <div class="col-md-6 text-xs">
+                                                            <p>info@why-what-who.com</p>
+                            </div>
+
+
+                                                        <div class="col-md-6 text-right text-xs">
+                                <ul class="info-right"><li class="nav-item menu-item "><a class="nav-link " href="../index.html" title="Home">Home</a></li></ul>
+                            </div>
+                                                  </div>
+                    </div>
+                </div>
+            </div>
+            <!--/overlay-->
+        </footer>
+        <!--/footer-->
+    </div>
+  </div>
+    <!--/wrapper-->
+    <!--Scroll To Top-->
+    <a href="#" class="ta_upscr bounceInup animated"><i class="fas fa-angle-up"></i></a>
+    <!--/Scroll To Top-->
+<!-- /Scroll To Top -->
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/why-what-who.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("../index.html")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("../index.html")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min41a3.js?ver=5.8' id='wp-embed-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/custom75dd.js?ver=1652887642' id='newsup-custom-js' defer></script>
+	<script type="rocketlazyloadscript">
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="../wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-228577383-3"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-228577383-3');
+</script>
+
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1657622459 -->

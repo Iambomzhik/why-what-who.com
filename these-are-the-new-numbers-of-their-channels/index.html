@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.userEventHandler=this.triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e.triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick")}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<title>These are the new numbers of their channels &#8211; Why-What-Who</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26amp%3Bdisplay%3Dswap&amp;subset=latin%2Clatin-ext&amp;display=swap" /></noscript>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link href='https://fonts.gstatic.com/' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Why-What-Who &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Why-What-Who &raquo; Comments Feed" href="../comments/feed/index.html" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min41a3.css?ver=5.8' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wp_automatic_gallery_style-css'  href='../wp-content/cache/min/1/wp-content/plugins/wp-automatic/css/wp-automatic75dd.css?ver=1652887642' type='text/css' media='all' />
+
+<link data-minify="1" rel='stylesheet' id='bootstrap-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/bootstrap8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='newsup-style-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/style8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='newsup-default-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/colors/default8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-5-all-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/font-awesome/css/all.min8d16.css?ver=1652887641' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css'  href='../wp-content/themes/newsup/css/font-awesome/css/v4-shims.min41a3.css?ver=5.8' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='owl-carousel-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/owl.carousel8d16.css?ver=1652887641' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='smartmenus-css'  href='../wp-content/cache/min/1/wp-content/themes/newsup/css/jquery.smartmenus.bootstrap8d16.css?ver=1652887641' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/plugins/wp-automatic/js/main-front75dd.js?ver=1652887642' id='wp_automatic_gallery-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/navigation75dd.js?ver=1652887642' id='newsup-navigation-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/bootstrap75dd.js?ver=1652887642' id='bootstrap-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='../wp-content/themes/newsup/js/owl.carousel.min41a3.js?ver=5.8' id='owl-carousel-min-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.smartmenus75dd.js?ver=1652887642' id='smartmenus-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.smartmenus.bootstrap75dd.js?ver=1652887642' id='bootstrap-smartmenus-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/jquery.marquee75dd.js?ver=1652887642' id='newsup-marquee-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/main75dd.js?ver=1652887642' id='newsup-main-js-js' defer></script>
+<link rel="https://api.w.org/" href="../wp-json/index.html" /><link rel="alternate" type="application/json" href="../wp-json/wp/v2/posts/2277.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='../indexf4ac.html?p=2277' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embedc803.json?url=https%3A%2F%2Fwhy-what-who.com%2Fthese-are-the-new-numbers-of-their-channels%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embedff7e?url=https%3A%2F%2Fwhy-what-who.com%2Fthese-are-the-new-numbers-of-their-channels%2F&amp;format=xml" />
+<style type="text/css" id="custom-background-css">
+    .wrapper { background-color: eeeeee; }
+</style>
+    <style type="text/css">
+            body .site-title a,
+        body .site-description {
+            color: #fff;
+        }
+
+        .site-branding-text .site-title a {
+                font-size: px;
+            }
+
+            @media only screen and (max-width: 640px) {
+                .site-branding-text .site-title a {
+                    font-size: 40px;
+
+                }
+            }
+
+            @media only screen and (max-width: 375px) {
+                .site-branding-text .site-title a {
+                    font-size: 32px;
+
+                }
+            }
+
+        </style>
+    <style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #eeeeee; }
+</style>
+	<link rel="icon" href="../wp-content/uploads/2022/05/cropped-w-32x32.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2022/05/cropped-w-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../wp-content/uploads/2022/05/cropped-w-180x180.png" />
+<meta name="msapplication-TileImage" content="https://why-what-who.com/wp-content/uploads/2022/05/cropped-w-270x270.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript" async src="../../pagead2.googlesyndication.com/pagead/js/f4047.txt?client=ca-pub-1731162805004860" crossorigin="anonymous"></script>
+</head>
+<body class="post-template-default single single-post postid-2277 single-format-standard custom-background wp-embed-responsive  ta-hide-date-author-in-list" >
+<a href="https://orgwordpress.org/">orgwordpress.org</a><div id="page" class="site">
+<a class="skip-link screen-reader-text" href="#content">
+Skip to content</a>
+    <div class="wrapper" id="custom-background-css">
+        <header class="mg-headwidget">
+            <!--==================== TOP BAR ====================-->
+
+            <!--<div class="mg-head-detail hidden-xs">
+    <div class="container-fluid">
+        <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                <ul class="info-left">
+                            <li>        </li>
+                    </ul>
+            </div>
+                    </div>
+    </div>
+</div>
+-->
+            <div class="clearfix"></div>
+                        <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/cropped-250x215-1.png" class="mg-nav-widget-area-back rocket-lazyload" style=''>
+                        <div class="overlay">
+              <div class="inner"  style="background-color:rgba(32,47,91,0.4);" > 
+                <div class="container-fluid">
+                    <div class="mg-nav-widget-area">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 col-sm-4 text-center-xs">
+                                <div class="navbar-header">
+                                                                <div class="site-branding-text">
+                                <h1 class="site-title"> <a href="../index.html" rel="home">Why-What-Who</a></h1>
+                                <p class="site-description">Why What Who Info News</p>
+                                </div>
+                                                              </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+          </div>
+    <div class="mg-menu-full">
+      <nav class="navbar navbar-expand-lg navbar-wp">
+        <div class="container-fluid flex-row-reverse">
+          <!-- Right nav -->
+                    <div class="m-header d-flex pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
+                                                <a class="mobilehomebtn" href="../index.html"><span class="fas fa-home"></span></a>
+                        <!-- navbar-toggle -->
+                        <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <i class="fas fa-bars"></i>
+                        </button>
+                        <!-- /navbar-toggle -->
+                                                <div class="dropdown show mg-search-box pr-2">
+                            <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <i class="fas fa-search"></i>
+                            </a>
+
+                            <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
+                        <form role="search" method="get" id="searchform" action="https://why-what-who.com/">
+  <div class="input-group">
+    <input type="search" class="form-control" placeholder="Search" value="" name="s" />
+    <span class="input-group-btn btn-default">
+    <button type="submit" class="btn"> <i class="fas fa-search"></i> </button>
+    </span> </div>
+</form>                      </div>
+                        </div>
+                                              
+                    </div>
+                    <!-- /Right nav -->
+         
+          
+                  <div class="collapse navbar-collapse" id="navbar-wp">
+                  	<div class="d-md-block">
+                  <ul class="nav navbar-nav mr-auto"><li class="nav-item menu-item "><a class="nav-link " href="../index.html" title="Home">Home</a></li></ul>
+        				</div>		
+              		</div>
+          </div>
+      </nav> <!-- /Navigation -->
+    </div>
+</header>
+<div class="clearfix"></div>
+ <!-- =========================
+     Page Content Section      
+============================== -->
+<main id="content">
+    <!--container-->
+    <div class="container-fluid">
+      <!--row-->
+      <div class="row">
+        <!--col-md-->
+                                                <div class="col-md-9">
+                    		                  <div class="mg-blog-post-box"> 
+              <div class="mg-header">
+                                <div class="mg-blog-category"> 
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                </div>
+                                <h1 class="title single"> <a title="Permalink to: These are the new numbers of their channels">
+                  These are the new numbers of their channels</a>
+                </h1>
+
+                <div class="media mg-info-author-block"> 
+                                    <a class="mg-author-pic" href="../author/ad007/index.html"> <img alt='' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" data-lazy-srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' data-lazy-src="https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g" /><noscript><img alt='' src='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g' srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' /></noscript> </a>
+                                  <div class="media-body">
+                                        <h4 class="media-heading"><span>By</span><a href="../author/ad007/index.html">Ad007</a></h4>
+                                                            <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                      May 26, 2022</span>
+                                      </div>
+                </div>
+              </div>
+              <img width="1268" height="664" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201268%20664'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="these are the new numbers of their channels" data-lazy-srcset="https://why-what-who.com/wp-content/uploads/2022/05/diales-movistar-plus.jpg 1268w, https://why-what-who.com/wp-content/uploads/2022/05/diales-movistar-plus-1024x536.jpg 1024w, https://why-what-who.com/wp-content/uploads/2022/05/diales-movistar-plus-768x402.jpg 768w" data-lazy-sizes="(max-width: 1268px) 100vw, 1268px" data-lazy-src="../wp-content/uploads/2022/05/diales-movistar-plus.jpg" /><noscript><img width="1268" height="664" src="../wp-content/uploads/2022/05/diales-movistar-plus.jpg" class="img-fluid wp-post-image" alt="these are the new numbers of their channels" srcset="https://why-what-who.com/wp-content/uploads/2022/05/diales-movistar-plus.jpg 1268w, https://why-what-who.com/wp-content/uploads/2022/05/diales-movistar-plus-1024x536.jpg 1024w, https://why-what-who.com/wp-content/uploads/2022/05/diales-movistar-plus-768x402.jpg 768w" sizes="(max-width: 1268px) 100vw, 1268px" /></noscript>              <article class="small single">
+                <p>Movistar is currently preparing for this great change of dials, <strong>which will take place from next June 2</strong>.  Channels 1 to 10 remain intact, but then you will be able to see how Movistar&#8217;s grid will look after this big change.</p>
+<h2>This is how the Movistar Plus+ dials will look</h2>
+<p>All the channels <strong>will continue to be sorted by categories</strong> so we can easily find them, but most of them are going to be on a different dial.  Movistar puts at our disposal a page with the dials so that we can find the dials once the change occurs next week, but here you will already be able to see all the new numbering.</p>
+<h3>Movie Channels</h3>
+<p>Movistar has a large number of channels designed to broadcast the best cinema all day long, several of them thematically. <strong>From dials 11 to 29</strong> we will find all these channels, although with one exception: <strong>the channel of La Resistencia 24 H is located on dial 21</strong>.</p>
+<ul>
+<li><strong>Dial 11:</strong> Premieres by M+</li>
+<li><strong>Dial 12:</strong> Premieres 2 by M+</li>
+<li><strong>Dial 13:</strong> PopUp by M+</li>
+<li><strong>Dial 15:</strong> Classics by M+</li>
+<li><strong>Dial 16:</strong> Action by M+</li>
+<li><strong>Dial 17:</strong> Comedy by M+</li>
+<li><strong>Dial 18:</strong> Drama by M+</li>
+<li><strong>Dial 19:</strong> Cinema Ñ by M+</li>
+<li><strong>Dial 20:</strong> Fest by M+</li>
+<li><strong>Dial 21:</strong> The 24H Resistance</li>
+<li><strong>Dial 22:</strong> TCM</li>
+<li><strong>Dial 23:</strong> hollywood channel</li>
+<li><strong>Dial 24:</strong> XTRM</li>
+<li><strong>Dial 25:</strong> Sundance TV</li>
+<li><strong>Dial 26:</strong> Dark</li>
+<li><strong>Dial 27:</strong> We are</li>
+<li><strong>Dial 28:</strong> cinema</li>
+<li><strong>Dial 29:</strong> Paramount Network</li>
+</ul>
+<p></p>
+<p id="caption-attachment-1679040" class="wp-caption-text">New Movistar Plus+ Cinema dials</p>
+<h3>series channels</h3>
+<p>If already with the movies we have more than enough options, with the series more or less the same thing happens.  In this case, the series channels will be located between <strong>dials 30 and 47</strong>and here we can find both some of Movistar&#8217;s own and other options such as Calle 13 or AMC.</p>
+<ul>
+<li><strong>Dial 31:</strong> Series by M+</li>
+<li><strong>Dial 32:</strong> Series 2 by M+</li>
+<li><strong>Dial 33:</strong> FOX</li>
+<li><strong>Dial 34:</strong> AXN</li>
+<li><strong>Dial 35:</strong> TNT</li>
+<li><strong>Dial 36:</strong> ComedyCentral</li>
+<li><strong>Dial 37:</strong> 13TH Street</li>
+<li><strong>Dial 38:</strong> Cosmo</li>
+<li><strong>Dial 39:</strong> AMC</li>
+<li><strong>Dial 40:</strong> AXN White</li>
+<li><strong>Dial 41:</strong> syfy</li>
+<li><strong>Dial 42:</strong> Thirteen</li>
+<li><strong>Dial 44:</strong> Energy</li>
+<li><strong>Dial 45:</strong> FDF</li>
+<li><strong>Dial 46:</strong> neox</li>
+<li><strong>Dial 47:</strong> A3 Series</li>
+</ul>
+<p><img viewbox="0 0 3 2" aria-describedby="caption-attachment-1679049" loading="lazy" class="size-large wp-image-1679049" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20631%20500'%3E%3C/svg%3E" alt="" width="631" height="500" data-lazy-src="../wp-content/uploads/2022/05/1653557767_397_these-are-the-new-numbers-of-their-channels.jpg"><noscript><img viewbox="0 0 3 2" aria-describedby="caption-attachment-1679049" loading="lazy" class="size-large wp-image-1679049" src="../wp-content/uploads/2022/05/1653557767_397_these-are-the-new-numbers-of-their-channels.jpg" alt="" width="631" height="500"></noscript></p>
+<p id="caption-attachment-1679049" class="wp-caption-text">This is how the dials of the series channels will look</p>
+<h3>Sports channels of all kinds</h3>
+<p>We take a leap in category and we are going to focus on Movistar&#8217;s sports offer, which is not exactly scarce. <strong>From dials 49 to 79</strong> we will be able to see all kinds of sports, from football to golf, through the Bulls or F1, for example.</p>
+<ul>
+<li><strong>Dial 49:</strong> MULTISPORT</li>
+<li><strong>Dial 50:</strong> #GO for M+</li>
+<li><strong>Dial 51:</strong> They #V for M+</li>
+<li><strong>Dial 52:</strong> LaLiga by M+</li>
+<li><strong>Dial 56:</strong> Champions by M+</li>
+<li><strong>Dial 59:</strong> Sports by M+</li>
+<li><strong>Dial 62:</strong> Golf by M+</li>
+<li><strong>Dial 63:</strong> DAZN F1</li>
+<li><strong>Dial 64:</strong> DAZN 1</li>
+<li><strong>Dial 65:</strong> DAZN 2</li>
+<li><strong>Dial 66:</strong> eurosport 1</li>
+<li><strong>Dial 67:</strong> Eurosport 2</li>
+<li><strong>Dial 69:</strong> GOAL</li>
+<li><strong>Dial 70:</strong> Telesport</li>
+<li><strong>Dial 71:</strong> Hunting and Fishing</li>
+<li><strong>Dial 72: </strong>Iberia TV</li>
+<li><strong>Dial 73: </strong>Bulls</li>
+<li><strong>Dial 74: </strong>Real MadridTV</li>
+<li><strong>Dial 75: </strong>Barca TV</li>
+<li><strong>Dial 76: </strong>HorseTV</li>
+<li><strong>Dial 77: </strong>NauticalChannel</li>
+<li><strong>Dial 78: </strong>GarageTV</li>
+<li><strong>Dial 79: </strong>UBEAT</li>
+</ul>
+<h3>documentary channels</h3>
+<p>That documentaries are boring is already a thing of the past.  Movistar Plus+ has several very interesting channels to watch documentaries, not only focused on nature, but even on the criminal world.  we will find them <strong>between dials 80 and 88</strong>.</p>
+<ul>
+<li><strong>Dial 80: </strong>NAT GEO</li>
+<li><strong>Dial 81: </strong>NG Wild</li>
+<li><strong>Dial 82: </strong>History</li>
+<li><strong>Dial 83: </strong>Discovery</li>
+<li><strong>Dial 84: </strong>ODYSSEY</li>
+<li><strong>Dial 85: </strong>AMC Break</li>
+<li><strong>Dial 87: </strong>DMAX</li>
+<li><strong>Dial 88: </strong>AMC Crime</li>
+</ul>
+<p><img viewbox="0 0 3 2" aria-describedby="caption-attachment-1580523" loading="lazy" class="size-large wp-image-1580523" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20715%20402'%3E%3C/svg%3E" alt="New AMC channels" width="715" height="402" data-lazy-src="../wp-content/uploads/2022/05/1653557767_419_these-are-the-new-numbers-of-their-channels.jpg"><noscript><img viewbox="0 0 3 2" aria-describedby="caption-attachment-1580523" loading="lazy" class="size-large wp-image-1580523" src="../wp-content/uploads/2022/05/1653557767_419_these-are-the-new-numbers-of-their-channels.jpg" alt="New AMC channels" width="715" height="402"></noscript></p>
+<p id="caption-attachment-1580523" class="wp-caption-text">Two of the channels available in the documentary offer.</p>
+<h3>lifestyle channels</h3>
+<p>Of course, in the Movistar channel lineup there is no shortage of lifestyle channels, where we will find a very varied and different selection of content between the channels.  All these channels will be located <strong>between dials 90 and 97</strong>.</p>
+<ul>
+<li><strong>Dial 90: </strong>Kitchen room</li>
+<li><strong>Dial 91: </strong>From home</li>
+<li><strong>Dial 92: </strong>DKISS</li>
+<li><strong>Dial 93: </strong>divinity</li>
+<li><strong>Dial 94: </strong>Not going</li>
+<li><strong>Dial 95: </strong>MEGA</li>
+<li><strong>Dial 96: </strong>BeMad</li>
+<li><strong>Dial 97: </strong>have</li>
+</ul>
+<h3>Channels for the little ones at home</h3>
+<p>If there are children in your house, you should know very well that on Movistar television there are quite a few options for them to enjoy content suitable for their ages. <strong>Between channels 109 and 119</strong> we will be able to find the best children&#8217;s series on the platform.</p>
+<ul>
+<li><strong>Dial 109: </strong>Nick Ukraine (temporary channel)</li>
+<li><strong>Dial 110: </strong>Baby TV</li>
+<li><strong>Dial 111: </strong>Disney Junior</li>
+<li><strong>Dial 112: </strong>panda channel</li>
+<li><strong>Dial 113: </strong>Nick jr</li>
+<li><strong>Dial 114: </strong>Nickelodeon</li>
+<li><strong>Dial 115: </strong>dreamworks</li>
+<li><strong>Dial 116: </strong>Disney</li>
+<li><strong>Dial 117: </strong>Boing</li>
+<li><strong>Dial 118: </strong>Clan TVE</li>
+<li><strong>Dial 119: </strong>ETB3 (only in the Basque Country)</li>
+</ul>
+<p><img viewbox="0 0 3 2" aria-describedby="caption-attachment-405670" loading="lazy" class="size-large wp-image-405670" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20715%20402'%3E%3C/svg%3E" alt="sponge Bob" width="715" height="402" data-lazy-src="../wp-content/uploads/2022/05/1653557767_314_these-are-the-new-numbers-of-their-channels.jpg"><noscript><img viewbox="0 0 3 2" aria-describedby="caption-attachment-405670" loading="lazy" class="size-large wp-image-405670" src="../wp-content/uploads/2022/05/1653557767_314_these-are-the-new-numbers-of-their-channels.jpg" alt="sponge Bob" width="715" height="402"></noscript></p>
+<p id="caption-attachment-405670" class="wp-caption-text">Sponge Bob is one of the children&#8217;s series available.</p>
+<h3>music channels</h3>
+<p>If you don&#8217;t feel like watching anything, but you do want to listen to all kinds of music, the Movistar Plus+ music channels are a great option.  Whether for yourself or to liven up a party, <strong>between dials 120 and 126</strong> you will find the best music.</p>
+<ul>
+<li><strong>Dial 120: </strong>MTV Spain</li>
+<li><strong>Dial 121: </strong>MTV 00s</li>
+<li><strong>Dial 123: </strong>Mezzo</li>
+<li><strong>Dial 124: </strong>Mezzo Live</li>
+<li><strong>Dial 125: </strong>Stingray Classica</li>
+<li><strong>Dial 126: </strong>sun music</li>
+</ul>
+<h3>Informative channels</h3>
+<p>To be informed of all the news (both in Spain and in the world) it never hurts to take a look at the channels focused entirely on giving information.  All of them will be placed on the Movistar grid <strong>between channels 127 and 149</strong>.</p>
+<ul>
+<li><strong>Dial 127: </strong>24 hour channel.</li>
+<li><strong>Dial 128: </strong>BBC World</li>
+<li><strong>Dial 129: </strong>CNN Int.</li>
+<li><strong>Dial 130: </strong>foxnews</li>
+<li><strong>Dial 131: </strong>euronews</li>
+<li><strong>Dial 132: </strong>Al-Jazeera</li>
+<li><strong>Dial 133: </strong>France 24 (FR)</li>
+<li><strong>Dial 135: </strong>1 + 1 International</li>
+<li><strong>Dial 136: </strong>CNBC Eur.</li>
+<li><strong>Dial 137: </strong>TV5 World</li>
+<li><strong>Dial 138: </strong>Bloomberg</li>
+<li><strong>Dial 139: </strong>The Bull TV</li>
+<li><strong>Dial 140: </strong>TV business</li>
+<li><strong>Dial 141: </strong>cnc world</li>
+<li><strong>Dial 142: </strong>CGTN Spanish</li>
+<li><strong>Dial 143: </strong>phone</li>
+<li><strong>Dial 144: </strong>C. Stars</li>
+<li><strong>Dial 145: </strong>Chilean TV</li>
+<li><strong>Dial 146: </strong>Our TV</li>
+<li><strong>Dial 147: </strong>Cubavision</li>
+<li><strong>Dial 148: </strong>TeleSUR</li>
+<li><strong>Dial 149: </strong>EWTN</li>
+</ul>
+<h3>regional channels</h3>
+<p>Almost all the regional channels are not going to change dials (most are located in the first dials), but those that were from 150 onwards do change slightly.  From now on, these will be located <strong>from dial 151 to 166</strong>.</p>
+<ul>
+<li><strong>Dial 151: </strong>Canal Sur Andalusia</li>
+<li><strong>Dial 152: </strong>TVG Europe</li>
+<li><strong>Dial 153: </strong>Canal Extremadura SAT</li>
+<li><strong>Dial 154: </strong>TV3CAT</li>
+<li><strong>Dial 155: </strong>ETB Basque</li>
+<li><strong>Dial 156: </strong>Aragon TV Int.</li>
+<li><strong>Dial 157: </strong>Telemadrid International</li>
+<li><strong>Dial 158: </strong>8 TV (national signal)</li>
+<li><strong>Dial 163: </strong>Super 3 / 33 (only in Catalonia)</li>
+<li><strong>Dial 164: </strong>Esport3 (only in Catalonia)</li>
+<li><strong>Dial 165: </strong>3/24 (only in Catalonia)</li>
+<li><strong>Dial 166: </strong>Betevé (only in Catalonia)</li>
+</ul>
+<h2>Things to keep in mind after the numbering change</h2>
+<p>Now that you know all the new numbering, it is worth pointing out some extra things.  The first is that the channels <strong>Playboy and Fútbol Replay will be on channels 190 and 199</strong>, respectively.  All channels blocked at the platform level (as is the case precisely with Playboy) will continue to be blocked despite the change of dial.  However, if we had any other channel blocked <strong>will have to lock it again</strong> through the Settings and Channel Blocking section.  Also, if you have favorite channel lists active on your decoder, you must deactivate the list and activate it again so that the new dials are updated.</p>
+<p>All this numbering change will take place completely automatically for all users from day 2, <strong>except those who have a satellite decoder</strong> (not iPlus).  For these, the change will occur at a later date, although these users have the possibility to do it themselves by following these steps:</p>
+<ul>
+<li>Press<strong> the custom key</strong> of command</li>
+<li>Select option 5 “Channel memorisation” and press OK</li>
+<li>Select option 6 «<strong>automatic storage</strong>» and press OK</li>
+</ul>
+                                                     <script type="rocketlazyloadscript">
+    function pinIt()
+    {
+      var e = document.createElement('script');
+      e.setAttribute('type','text/javascript');
+      e.setAttribute('charset','UTF-8');
+      e.setAttribute('src','../../assets.pinterest.com/js/pinmarklet2a3b.js?r='+Math.random()*99999999);
+      document.body.appendChild(e);
+    }
+    </script>
+                     <div class="post-share">
+                          <div class="post-share-icons cf">
+                           
+                              <a href="https://www.facebook.com/sharer.php?u=https://why-what-who.com/these-are-the-new-numbers-of-their-channels/" class="link facebook" target="_blank" >
+                                <i class="fab fa-facebook"></i></a>
+                            
+            
+                              <a href="http://twitter.com/share?url=https://why-what-who.com/these-are-the-new-numbers-of-their-channels/&amp;text=These%20are%20the%20new%20numbers%20of%20their%20channels" class="link twitter" target="_blank">
+                                <i class="fab fa-twitter"></i></a>
+            
+                              <a href="mailto:?subject=These%20are%20the%20new%20numbers%20of%20their%20channels&#038;body=https://why-what-who.com/these-are-the-new-numbers-of-their-channels/" class="link email" target="_blank" >
+                                <i class="fas fa-envelope"></i></a>
+
+
+                              <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://why-what-who.com/these-are-the-new-numbers-of-their-channels/&amp;title=These%20are%20the%20new%20numbers%20of%20their%20channels" class="link linkedin" target="_blank" >
+                                <i class="fab fa-linkedin"></i></a>
+
+                             <a href="https://telegram.me/share/url?url=https://why-what-who.com/these-are-the-new-numbers-of-their-channels/&amp;text&amp;title=These%20are%20the%20new%20numbers%20of%20their%20channels" class="link telegram" target="_blank" >
+                                <i class="fab fa-telegram"></i></a>
+
+                              <a href="javascript:pinIt();" class="link pinterest"><i class="fab fa-pinterest"></i></a>    
+                          </div>
+                    </div>
+
+                <div class="clearfix mb-3"></div>
+                
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="../this-is-how-the-groups-of-the-qatar-2022-world-cup-were/index.html" rel="prev">This is how the groups of the Qatar 2022 World Cup were <div class="fas fa-angle-double-right"></div><span></span></a></div><div class="nav-next"><a href="../recover-password-and-sign-back-in-to-outlook-or-hotmail/index.html" rel="next"><div class="fas fa-angle-double-left"></div><span></span> Recover password and sign back in to Outlook or Hotmail</a></div></div>
+	</nav>                          </article>
+            </div>
+		                 <div class="media mg-info-author-block">
+            <a class="mg-author-pic" href="../author/ad007/index.html"><img alt='' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" data-lazy-srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' data-lazy-src="https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g" /><noscript><img alt='' src='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=150&amp;d=mm&amp;r=g' srcset='https://secure.gravatar.com/avatar/5ef2bf0ac746f8f9ab247d4b9cd4b28d?s=300&#038;d=mm&#038;r=g 2x' class='avatar avatar-150 photo' height='150' width='150' /></noscript></a>
+                <div class="media-body">
+                  <h4 class="media-heading">By <a href ="../author/ad007/index.html">Ad007</a></h4>
+                  <p></p>
+                </div>
+            </div>
+                          <div class="mg-featured-slider p-3 mb-4">
+                        <!--Start mg-realated-slider -->
+                        <div class="mg-sec-title">
+                            <!-- mg-sec-title -->
+                                                        <h4>Related Post</h4>
+                        </div>
+                        <!-- // mg-sec-title -->
+                           <div class="row">
+                                <!-- featured_post -->
+                                                                      <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/medium.GettyImages-1172049905-e1637343496829.jpeg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../the-classified-countries-and-the-dates/index.html" title="Permalink to: The classified countries and the dates">
+                                              The classified countries and the dates</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              May 30, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                        <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/apps-autotune-android.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../best-autotune-apps-for-android/index.html" title="Permalink to: Best Autotune Apps for Android">
+                                              Best Autotune Apps for Android</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              May 30, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                        <!-- blog -->
+                                  <div class="col-md-4">
+                                    <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/Extensiones-de-fotos-musica-y-videos-para-Mozilla-Firefox.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                                        style="" >
+                                      <div class="mg-blog-inner">
+                                                                                      <div class="mg-blog-category"> <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                                          </div>                                             <h4 class="title"> <a href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html" title="Permalink to: Photo, music and video extensions for Mozilla Firefox">
+                                              Photo, music and video extensions for Mozilla Firefox</a>
+                                             </h4>
+                                            <div class="mg-blog-meta"> 
+                                                                                          <span class="mg-blog-date"><i class="fas fa-clock"></i> 
+                                              May 30, 2022</span>
+                                                                                        <a href="../author/ad007/index.html"> <i class="fas fa-user-circle"></i> Ad007</a>
+                                              </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <!-- blog -->
+                                                                </div>
+                            
+                    </div>
+                    <!--End mg-realated-slider -->
+                        </div>
+             <!--sidebar-->
+          <!--col-md-3-->
+            <aside class="col-md-3">
+                  
+<aside id="secondary" class="widget-area" role="complementary">
+	<div id="sidebar-right" class="mg-sidebar">
+		<div id="block-2" class="mg-widget widget_block widget_search"><form role="search" method="get" action="https://why-what-who.com/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"><label for="wp-block-search__input-1" class="wp-block-search__label">Search</label><div class="wp-block-search__inside-wrapper"><input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" value="" placeholder=""  required /><button type="submit" class="wp-block-search__button ">Search</button></div></form></div><div id="block-3" class="mg-widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container"><h2>Recent Posts</h2><ul class="wp-block-latest-posts__list wp-block-latest-posts"><li><a href="../the-classified-countries-and-the-dates/index.html">The classified countries and the dates</a></li>
+<li><a href="../best-autotune-apps-for-android/index.html">Best Autotune Apps for Android</a></li>
+<li><a href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html">Photo, music and video extensions for Mozilla Firefox</a></li>
+<li><a href="../cristina-and-alberto-repeat-their-show-until-exhaustion-public-informant/index.html">Cristina and Alberto repeat their show until exhaustion – Public Informant</a></li>
+<li><a href="../real-madrid-members-can-request-a-ticket-for-the-champions-league-final-from-the-club-until-the-10th-champions-league/index.html">Real Madrid members can request a ticket for the Champions League final from the club until the 10th &#8211; Champions League</a></li>
+</ul></div></div></div>	</div>
+</aside><!-- #secondary -->
+            </aside>
+          <!--/col-md-3-->
+      <!--/sidebar-->
+          </div>
+  </div>
+</main>
+  <div class="container-fluid mr-bot40 mg-posts-sec-inner">
+        <div class="missed-inner">
+        <div class="row">
+                        <div class="col-md-12">
+                <div class="mg-sec-title">
+                    <!-- mg-sec-title -->
+                    <h4>You missed</h4>
+                </div>
+            </div>
+                            <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/medium.GettyImages-1172049905-e1637343496829.jpeg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../the-classified-countries-and-the-dates/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../the-classified-countries-and-the-dates/index.html" title="Permalink to: The classified countries and the dates"> The classified countries and the dates</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/apps-autotune-android.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../best-autotune-apps-for-android/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../best-autotune-apps-for-android/index.html" title="Permalink to: Best Autotune Apps for Android"> Best Autotune Apps for Android</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/Extensiones-de-fotos-musica-y-videos-para-Mozilla-Firefox.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../photo-music-and-video-extensions-for-mozilla-firefox/index.html" title="Permalink to: Photo, music and video extensions for Mozilla Firefox"> Photo, music and video extensions for Mozilla Firefox</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                         <!--col-md-3-->
+                <div class="col-md-3 col-sm-6 pulse animated">
+               <div data-bg="https://why-what-who.com/wp-content/uploads/2022/05/CFK-vs-AF-69.jpg" class="mg-blog-post-3 minh back-img rocket-lazyload" 
+                                                        style="" >
+                            <a class="link-div" href="../cristina-and-alberto-repeat-their-show-until-exhaustion-public-informant/index.html"></a>
+                    <div class="mg-blog-inner">
+                      <div class="mg-blog-category">
+                      <a class="newsup-categories category-color-1" href="../category/uncategorized/index.html" alt="View all posts in Uncategorized"> 
+                                 Uncategorized
+                             </a>                      </div>
+                      <h4 class="title"> <a href="../cristina-and-alberto-repeat-their-show-until-exhaustion-public-informant/index.html" title="Permalink to: Cristina and Alberto repeat their show until exhaustion – Public Informant"> Cristina and Alberto repeat their show until exhaustion – Public Informant</a> </h4>
+                          <div class="mg-blog-meta">
+        <span class="mg-blog-date"><i class="fas fa-clock"></i>
+         <a href="../2022/05/index.html">
+         May 30, 2022</a></span>
+         <a class="auth" href="../author/ad007/index.html"><i class="fas fa-user-circle"></i> 
+        Ad007</a>
+         
+    </div>
+                        </div>
+                </div>
+            </div>
+            <!--/col-md-3-->
+                     
+
+                </div>
+            </div>
+        </div>
+<!--==================== FOOTER AREA ====================-->
+        <footer> 
+            <div class="overlay" style="background-color: ;">
+                <!--Start mg-footer-widget-area-->
+                                 <!--End mg-footer-widget-area-->
+                <!--Start mg-footer-widget-area-->
+                <div class="mg-footer-bottom-area">
+                    <div class="container-fluid">
+                        <div class="divide-line"></div>
+                        <div class="row align-items-center">
+                            <!--col-md-4-->
+                            <div class="col-md-6">
+                                                             <div class="site-branding-text">
+                              <h1 class="site-title"> <a href="../index.html" rel="home">Why-What-Who</a></h1>
+                              <p class="site-description">Why What Who Info News</p>
+                              </div>
+                                                          </div>
+
+                             
+                            <div class="col-md-6 text-right text-xs">
+                                
+                            <ul class="mg-social">
+                                    
+                                                                         
+                                                                        
+                                                                 </ul>
+
+
+                            </div>
+                            <!--/col-md-4-->  
+                             
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/container-->
+                </div>
+                <!--End mg-footer-widget-area-->
+
+                <div class="mg-footer-copyright">
+                    <div class="container-fluid">
+                        <div class="row">
+                                                      <div class="col-md-6 text-xs">
+                                                            <p>info@why-what-who.com</p>
+                            </div>
+
+
+                                                        <div class="col-md-6 text-right text-xs">
+                                <ul class="info-right"><li class="nav-item menu-item "><a class="nav-link " href="../index.html" title="Home">Home</a></li></ul>
+                            </div>
+                                                  </div>
+                    </div>
+                </div>
+            </div>
+            <!--/overlay-->
+        </footer>
+        <!--/footer-->
+    </div>
+  </div>
+    <!--/wrapper-->
+    <!--Scroll To Top-->
+    <a href="#" class="ta_upscr bounceInup animated"><i class="fas fa-angle-up"></i></a>
+    <!--/Scroll To Top-->
+<!-- /Scroll To Top -->
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/why-what-who.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("../index.html")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("../index.html")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min41a3.js?ver=5.8' id='wp-embed-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='../wp-content/cache/min/1/wp-content/themes/newsup/js/custom75dd.js?ver=1652887642' id='newsup-custom-js' defer></script>
+	<script type="rocketlazyloadscript">
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="../wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-228577383-3"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-228577383-3');
+</script>
+
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1657611246 -->
